@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { createBrowserRouter, RouterProvider, Outlet, useLocation } from "react-router-dom";
 
 
-import {Header,Footer} from './components/index'
+import {Header,Footer,LoadingScrn} from './components/index'
 
 const Home = lazy(() => import("./pages/Home"));
 
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: "*",
         element: (
-          <Suspense fallback={<p>Loading</p>}>
+          <Suspense fallback={<LoadingScrn/>}>
             not found
           </Suspense>
         ),
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: (
-          <Suspense fallback={<p>Loading</p>}>
+          <Suspense fallback={<LoadingScrn/>}>
             <Home/>
           </Suspense>
         ),
