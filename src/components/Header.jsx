@@ -35,7 +35,7 @@ const Header = () => {
           <button
             className={`${
               !isScrolled ? "" : ""
-            }  bg-mainbtn border-2 border-mainbtn text-white hover:text-white  duration-150 rounded-full px-5  text-sm py-2 xl:py-3 `}
+            }  bg-mainbtn border-2 border-mainbtn text-white hover:text-white  duration-150  px-3  text-sm py-2  `}
           >
             <Link>CONTACT US</Link>
           </button>

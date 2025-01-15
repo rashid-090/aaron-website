@@ -6,10 +6,10 @@ const EnquiryForm = () => {
     const [value, setValue] = useState()
   return (
     <>
-      <form className="flex flex-col gap-3 w-full xl:w-[65%] caret-mainbtn rounded-md overflow-hidden bg-[#ffffff3d] backdrop-blur-md p-5 py-10   border-white/30">
+      <form className="flex flex-col gap-3 w-full xl:w-[65%] caret-mainbtn rounded-0 overflow-hidden bg-[#ffffff1b] backdrop-blur-md p-5 py-10   border-white/30">
         <div className="w-full">
           <input
-            className="w-full p-2 xl:py-3 border"
+            className="w-full p-2 xl:py-2.5 border"
             type="text"
             placeholder="Full Name"
             required
@@ -18,13 +18,13 @@ const EnquiryForm = () => {
         </div>
         <div className="w-full">
           <input
-            className="w-full p-2 xl:py-3 border"
+            className="w-full p-2 xl:py-2.5 border"
             type="email"
             placeholder="Email"
             required
           />
         </div>
-        <div className="w-full flex p-2 xl:py-3 border bg-white">
+        <div className="w-full flex p-2 xl:py-2.5 border bg-white">
           <PhoneInput
             required
             className="phonecode w-24 outline-none"
@@ -42,7 +42,7 @@ const EnquiryForm = () => {
             required
           />
         </div>
-        <select className="w-full p-2 xl:py-3 border" required>
+        <select className="w-full p-2 xl:py-2.5 border" required>
         <option value="">Select State</option>
         <option value="Andhra Pradesh">Andhra Pradesh</option>
         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -80,14 +80,14 @@ const EnquiryForm = () => {
         <option value="Puducherry">Puducherry</option>
         </select>
 
-        <select className="w-full p-2 xl:py-3 border" required>
+        <select className="w-full p-2 xl:py-2.5 border" required>
           <option value="">Select Modal</option>
           <option value="">Modal 1</option>
           <option value="">Modal 2</option>
           <option value="">Modal 3</option>
         </select>
         <button
-          className="bg-mainbtn hover:bg-opacity-90 duration-150 h-10 xl:h-12 uppercase tracking-widest"
+          className="bg-mainbtn hover:bg-opacity-90 duration-150 h-10 xl:h-11 uppercase tracking-widest"
           type="submit"
         >
           Send
