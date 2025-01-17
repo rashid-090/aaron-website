@@ -38,7 +38,7 @@ const FAQAccordion = () => {
 
   return (
     <>
-      <div className="w-11/12 xl:w-10/12 mx-auto grid grid-cols-1 xl:grid-cols-3 gap-10 text-mainclr">
+      <div className="w-11/12 xl:w-10/12 mx-auto grid grid-cols-1 xl:grid-cols-3 gap-5 md:gap-10 text-mainclr">
             <div className="h-full flex justify-center items-start flex-col gap-5 mb-10">
                 <h2 className="text-3xl xl:text-4xl font-semibold capitalize">
                 FAQ
