@@ -118,7 +118,7 @@ const Products = () => {
       <Slider {...settings}>
         {OurProducts.map((prod, i) => (
           <div key={i} className="p-1 z-10">
-            <div className="relative group overflow-hidden bg-gray-100 shadow">
+            <div className="relative group overflow-hidden bg-gray-100 shadow rounded-3xl">
               {/* Product Image */}
               <img
                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
@@ -127,7 +127,7 @@ const Products = () => {
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 xl:p-8 text-white">
                 <h3 className="text-lg xl:text-2xl 2xl:text-3xl font-semibold group-hover:translate-y-0 transform -translate-y-full transition-transform duration-500 group-hover:text-mainbtn">
                   {prod.name}
                 </h3>

@@ -47,12 +47,12 @@ const Home = () => {
         <div className="w-11/12 xl:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5 gap-x-10">
           <div className="xl:col-span-3 pr-10 xl:pr-40 relative overflow-hidden">
             <img
-              className="w-full h-60 xl:h-96 object-cover z-0"
+              className="w-full h-60 xl:h-96 object-cover z-0 rounded-3xl"
               src={Lft2}
               alt=""
             />
             <img
-              className="w-40 h-40 xl:w-52 xl:h-52 absolute top-[60%] -translate-y-[50%] right-0 xl:right-5 shadow-xl object-cover z-10 "
+              className="w-40 h-40 xl:w-52 xl:h-52 absolute top-[60%] rounded-3xl -translate-y-[50%] right-0 xl:right-5 shadow-xl object-cover z-10 "
               src={Lft3}
               alt=""
             />

@@ -129,7 +129,7 @@ const Services = () => {
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-5">
         {/* Left Section */}
-        <div className=" h-full py-10 text-white text-center flex flex-col gap-2 items-center justify-center relative overflow-hidden">
+        <div className=" h-full py-10 text-white text-center flex flex-col gap-2 items-center justify-center relative overflow-hidden rounded-3xl">
           <img
             className="w-full h-full object-cover absolute top-0 left-0 z-0 brightness-50"
             src={Lft2}
@@ -139,7 +139,7 @@ const Services = () => {
             <h2 className="text-3xl xl:text-4xl font-semibold capitalize">
               Our Services
             </h2>
-            <p className="text-sm">
+            <p className="text-xs md:text-sm">
             Our portfolio includes everything from sophisticated home elevators in Kerala for residential spaces to robust commercial elevators for business environments.
             </p>
             <button className="border-2 border-mainbtn w-fit px-3 h-10 text-mainbtn hover:bg-mainbtn hover:text-white duration-150 mt-3">
@@ -153,7 +153,7 @@ const Services = () => {
           <Slider {...settings}>
             {ourServices.map((service, i) => (
               <div key={i} className="h-full pr-2 mb-5">
-                <div className="bg-gray-100 py-10 md:py-0 md:aspect-square flex flex-col items-center text-mainclr p-5 justify-center text-center gap-y-3">
+                <div className="bg-gray-100 rounded-3xl py-10 md:py-0 md:aspect-square flex flex-col items-center text-mainclr p-5 justify-center text-center gap-y-3">
                  <div className="bg-white w-20 h-20 grid place-items-center rounded-full shadow-sm">
                   <img
                       src={service.icon}

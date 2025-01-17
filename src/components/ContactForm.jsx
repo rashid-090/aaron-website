@@ -34,7 +34,7 @@ const ContactForm = () => {
             </div>
           </div>
           <div className="relative">
-            <div className="bg-white shadow-2xl  border-2 rounded-0 w-full p-7 md:p-10 md:absolute top-[50%] left-[50] md:-translate-y-[50%]">
+            <div className="bg-white shadow-2xl  border-2 rounded-t-3xl md:rounded-3xl w-full p-7 md:p-10 md:absolute top-[50%] left-[50] md:-translate-y-[50%]">
                 <h4 className="text-2xl md:text-3xl text-mainclr font-semibold uppercase">contact us</h4>
                 <p className="text-xs md:text-sm text-gray-600 pt-2">Take the first step towards superior vertical mobility.<br className="hidden md:block"/> Contact Kerala's trusted elevation experts for a consultation.</p>
                 <form className="flex flex-col gap-5 mt-5">
