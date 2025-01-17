@@ -42,7 +42,7 @@ const EnquiryForm = () => {
             required
           />
         </div>
-        <select className="w-full p-2 xl:py-2.5 border-b focus:border-mainbtn rounded-sm" required>
+        <select className="w-full p-2 xl:py-2.5 border-b focus:border-mainbtn rounded-sm bg-transparent" required>
         <option value="">Select State</option>
         <option value="Andhra Pradesh">Andhra Pradesh</option>
         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -80,7 +80,7 @@ const EnquiryForm = () => {
         <option value="Puducherry">Puducherry</option>
         </select>
 
-        <select className="w-full p-2 xl:py-2.5 border-b focus:border-mainbtn rounded-sm" required>
+        <select className="w-full p-2 xl:py-2.5 border-b focus:border-mainbtn rounded-sm bg-transparent" required>
           <option value="">Select Modal</option>
           <option value="">Modal 1</option>
           <option value="">Modal 2</option>
