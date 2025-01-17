@@ -43,7 +43,7 @@ const FAQAccordion = () => {
                 <h2 className="text-3xl xl:text-4xl font-semibold capitalize">
                 FAQ
                 </h2>
-                <div className="h-1 w-14 -mt-1 bg-gradient-to-r from-mainbtn via-mainbtnhrv to-white"></div>
+                <div className="h-1 w-14 -mt-6 bg-gradient-to-r from-mainbtn via-mainbtnhrv to-white"></div>
                 <p className="text-sm">Find Answers to Common Questions.</p>
                 <button className="border-2 border-mainbtn w-fit px-3 h-10 text-mainbtn hover:bg-mainbtn hover:text-white duration-150">
               Learn more

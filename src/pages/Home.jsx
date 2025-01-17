@@ -32,7 +32,7 @@ const Home = () => {
             <h1 className="text-3xl sm:text-4xl xl:text-5xl font-semibold  bg-gradient-to-r from-mainbtn via-mainbtnhrv to-white bg-clip-text text-transparent">
             Premium Elevators in Kerala | Aaron Elevators
             </h1>
-            <p className="text-sm text-justify tracking-tight">
+            <p className="text-sm text-justify tracking-tighter md:tracking-tight w-[95%] mx-auto md:w-full">
             Transform your vertical mobility experience with Aaron Elevators, Kerala's leading elevator solution provider. As trusted elevator manufacturers in Kerala, we bring 16+ years of excellence in delivering cutting-edge elevation solutions. Our comprehensive range of elevators in Kerala combines innovation, safety, and reliability, making us the best elevator company in Kerala for all your vertical transportation needs.
             </p>
           </div>

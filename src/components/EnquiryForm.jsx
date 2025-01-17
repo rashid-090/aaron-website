@@ -6,7 +6,7 @@ const EnquiryForm = () => {
     const [value, setValue] = useState()
   return (
     <>
-      <form className="flex flex-col gap-3 w-full xl:w-[65%] caret-mainbtn rounded-3xl shadow-2xl overflow-hidden bg-[#fff] backdrop-blur-md p-5 py-10   border-white/30">
+      <form className="flex flex-col gap-3 w-[95%] xl:w-[65%] caret-mainbtn rounded-3xl shadow-2xl overflow-hidden bg-[#fff] backdrop-blur-md p-5 py-10   border-white/30">
         <div className="w-full">
           <input
             className="w-full p-2 xl:py-2.5 border-b focus:border-mainbtn rounded-sm"
