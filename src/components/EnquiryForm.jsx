@@ -6,10 +6,10 @@ const EnquiryForm = () => {
     const [value, setValue] = useState()
   return (
     <>
-      <form className="flex flex-col gap-3 w-full xl:w-[65%] caret-mainbtn rounded-sm overflow-hidden bg-[#ffffff1b] backdrop-blur-md p-5 py-10   border-white/30">
+      <form className="flex flex-col gap-3 w-full xl:w-[65%] caret-mainbtn rounded-3xl shadow-2xl overflow-hidden bg-[#fff] backdrop-blur-md p-5 py-10   border-white/30">
         <div className="w-full">
           <input
-            className="w-full p-2 xl:py-2.5 border rounded-sm"
+            className="w-full p-2 xl:py-2.5 border-b focus:border-mainbtn rounded-sm"
             type="text"
             placeholder="Full Name"
             required
@@ -18,13 +18,13 @@ const EnquiryForm = () => {
         </div>
         <div className="w-full">
           <input
-            className="w-full p-2 xl:py-2.5 border rounded-sm"
+            className="w-full p-2 xl:py-2.5 border-b focus:border-mainbtn rounded-sm"
             type="email"
             placeholder="Email"
             required
           />
         </div>
-        <div className="w-full flex p-2 xl:py-2.5 border bg-white rounded-sm overflow-hidden">
+        <div className="w-full flex p-2 xl:py-2.5 border-b focus:border-mainbtn bg-white rounded-sm overflow-hidden">
           <PhoneInput
             required
             className="phonecode w-24 outline-none"
@@ -35,14 +35,14 @@ const EnquiryForm = () => {
             onChange={setValue}
           />
           <input
-            className="w-full"
+            className="w-full "
             type="number"
             inputMode="numeric"
             placeholder="Mobile"
             required
           />
         </div>
-        <select className="w-full p-2 xl:py-2.5 border rounded-sm" required>
+        <select className="w-full p-2 xl:py-2.5 border-b focus:border-mainbtn rounded-sm" required>
         <option value="">Select State</option>
         <option value="Andhra Pradesh">Andhra Pradesh</option>
         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -80,7 +80,7 @@ const EnquiryForm = () => {
         <option value="Puducherry">Puducherry</option>
         </select>
 
-        <select className="w-full p-2 xl:py-2.5 border rounded-sm" required>
+        <select className="w-full p-2 xl:py-2.5 border-b focus:border-mainbtn rounded-sm" required>
           <option value="">Select Modal</option>
           <option value="">Modal 1</option>
           <option value="">Modal 2</option>
