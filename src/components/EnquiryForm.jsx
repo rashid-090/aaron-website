@@ -87,7 +87,7 @@ const EnquiryForm = () => {
           <option value="">Modal 3</option>
         </select>
         <button
-          className="bg-gradient-to-r from-mainbtn to-mainbtnhrv hover:from-mainbtnhrv hover:to-mainbtn duration-500 hover:bg-opacity-90 h-10 xl:h-11 uppercase tracking-widest rounded-sm"
+          className="bg-gradient-to-r from-mainbtn to-mainbtnhrv hover:from-mainbtn hover:to-mainbtn duration-500 hover:bg-opacity-90 h-10 xl:h-11 uppercase tracking-widest rounded-sm"
           type="submit"
         >
           Send

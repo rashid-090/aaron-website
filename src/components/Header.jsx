@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <nav
-      className={`fixed w-full left-0 top-0 z-40 transition-all duration-300 py-3 ${!isScrolled ? "bg-transparent xl:py-5" : "bg-[#0000003d] backdrop-blur-md xl:py-1"}`}
+      className={`fixed w-full left-0 top-0 z-[999] transition-all duration-300 py-3 ${!isScrolled ? "bg-transparent xl:py-5" : "bg-[#0000003d] backdrop-blur-md xl:py-1"}`}
     >
       <div className="w-11/12 xl:w-10/12 mx-auto  flex items-center justify-between">
         <img className="h-10 w-28 md:h-16 md:w-32 object-contain" src={AaronLogo} alt="Logo" />

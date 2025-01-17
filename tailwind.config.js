@@ -16,6 +16,7 @@ export default {
         mainclr: "#011c40",
         mainbtn: "#efb13b",
         mainbtnhrv: "#ffe791",
+        mainbtnhrv2: "#e7cc6b",
       },
       fontFamily: {
         // light: ["poppins-light", "sans-serif"],

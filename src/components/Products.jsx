@@ -100,7 +100,7 @@ const Products = () => {
       {
         breakpoint: 1024, // For tablets and smaller devices
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 4,
         },
       },
       {

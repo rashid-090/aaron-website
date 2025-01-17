@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { Serv1, Lft2 } from "../assets";
+import { Lft2,Servhome,Servpassanger,Servcommercial,Servstructure,Servcapsule,Servglass,Servcar,Servhospital,Servfreight,Servbubm,Servkitchen,ServMRL } from "../assets";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -9,32 +9,62 @@ const ourServices = [
   {
     title: `Home Elevators`,
     desc: `Custom-designed solutions perfect for residential spaces`,
-    icon: Serv1,
+    icon: Servhome,
   },
   {
-    title: `Home Elevators`,
-    desc: `Custom-designed solutions perfect for residential spaces perfect for residential spaces`,
-    icon: Serv1,
+    title: `Passenger Elevators`,
+    desc: `Efficient people movers for commercial buildings`,
+    icon: Servpassanger,
   },
   {
-    title: `Home Elevators`,
-    desc: `Custom-designed solutions perfect for residential spaces`,
-    icon: Serv1,
+    title: `Commercial Elevators`,
+    desc: `High-capacity solutions for business environments`,
+    icon: Servcommercial,
   },
   {
-    title: `Home Elevators`,
-    desc: `Custom-designed solutions perfect for residential spaces perfect for residential spaces`,
-    icon: Serv1,
+    title: `Structural Elevators`,
+    desc: `Robust systems for industrial applications`,
+    icon: Servstructure,
   },
   {
-    title: `Home Elevators`,
-    desc: `Custom-designed solutions perfect for residential spaces`,
-    icon: Serv1,
+    title: `Capsule Elevators`,
+    desc: `Modern panoramic lifting solutions`,
+    icon: Servcapsule,
   },
   {
-    title: `Home Elevators`,
-    desc: `Custom-designed solutions perfect for residential spaces perfect for residential spaces`,
-    icon: Serv1,
+    title: `Glass Elevators`,
+    desc: `Elegant, transparent vertical transportation`,
+    icon: Servglass,
+  },
+  {
+    title: `Car Elevators`,
+    desc: `Specialized solutions for automotive transportation`,
+    icon: Servcar,
+  },
+  {
+    title: `Hospital Elevators`,
+    desc: `Medical-grade elevation systems`,
+    icon: Servhospital,
+  },
+  {
+    title: `Freight Elevators`,
+    desc: `Heavy-duty cargo transportation`,
+    icon: Servfreight,
+  },
+  {
+    title: `Dumbwaiter Elevators`,
+    desc: `Compact service lifting solutions`,
+    icon: Servbubm,
+  },
+  {
+    title: `Kitchen Elevators`,
+    desc: `Specialized food service transportation`,
+    icon: Servkitchen,
+  },
+  {
+    title: `MRL Elevators`,
+    desc: `Space-saving machine room-less systems`,
+    icon: ServMRL,
   },
 ];
 
@@ -97,9 +127,9 @@ const Services = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-5">
         {/* Left Section */}
-        <div className="h-full py-10 text-white text-center flex flex-col gap-2 items-center justify-center relative overflow-hidden">
+        <div className=" h-full py-10 text-white text-center flex flex-col gap-2 items-center justify-center relative overflow-hidden">
           <img
             className="w-full h-full object-cover absolute top-0 left-0 z-0 brightness-50"
             src={Lft2}
@@ -110,9 +140,7 @@ const Services = () => {
               Our Services
             </h2>
             <p className="text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              necessitatibus hic quaerat magnam vel reiciendis asperiores ipsum
-              laboriosam corporis amet?
+            Our portfolio includes everything from sophisticated home elevators in Kerala for residential spaces to robust commercial elevators for business environments.
             </p>
             <button className="border-2 border-mainbtn w-fit px-3 h-10 text-mainbtn hover:bg-mainbtn hover:text-white duration-150 mt-3">
               Learn More
@@ -121,16 +149,18 @@ const Services = () => {
         </div>
 
         {/* Right Section with Slider */}
-        <div className="xl:col-span-3 relative z-10">
+        <div className="md:col-span-2 xl:col-span-3 relative z-10">
           <Slider {...settings}>
             {ourServices.map((service, i) => (
               <div key={i} className="h-full pr-2 mb-5">
-                <div className="bg-gray-100 py-10 md:py-0 md:aspect-square flex flex-col items-center p-5 justify-center text-center gap-y-5">
+                <div className="bg-gray-100 py-10 md:py-0 md:aspect-square flex flex-col items-center text-mainclr p-5 justify-center text-center gap-y-3">
+                 <div className="bg-white w-20 h-20 grid place-items-center rounded-full shadow-sm">
                   <img
-                    src={service.icon}
-                    alt={service.title}
-                    className="w-16 h-16 object-cover"
-                  />
+                      src={service.icon}
+                      alt={service.title}
+                      className="w-12 h-12 object-contain"
+                    />
+                 </div>
                   <h4 className="text-lg font-semibold text-gray-800">
                     {service.title}
                   </h4>

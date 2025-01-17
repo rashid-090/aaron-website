@@ -9,7 +9,7 @@ const FullScreenLoader = () => {
       animate={{ opacity: 1 }} // Fully visible while loading
       exit={{ opacity: 0 }} // Fade-out when unmounted
       transition={{ duration: 0.5 }} // Smooth fade duration
-      className="fixed inset-0 flex items-center justify-center bg-gray-800 z-50"
+      className="fixed inset-0 flex items-center justify-center bg-gray-800 z-[9999999]"
     >
       <div className="relative w-20 h-20 xl:w-28 xl:h-28">
         {/* Running Effect Circle */}
