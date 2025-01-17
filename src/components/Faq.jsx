@@ -59,7 +59,7 @@ const FAQAccordion = () => {
                 onClick={() => toggleFAQ(index)}
                 className="w-full flex justify-between items-center text-left px-5 py-3  font-medium"
               >
-                <span className="text-sm md:text-base  ">
+                <span className="text-xs font-medium md:text-base  ">
                   {faq.question}
                 </span>
                 <div
@@ -75,7 +75,7 @@ const FAQAccordion = () => {
                   activeIndex === index ? "max-h-screen" : "max-h-0"
                 }`}
               >
-                <div className="p-5 border-t-2 text-xs md:text-sm">
+                <div className="p-5 border-t-2 text-xs md:text-sm font-light">
                   {faq.answer}
                 </div>
               </div>

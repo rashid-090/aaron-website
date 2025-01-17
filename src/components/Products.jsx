@@ -128,13 +128,13 @@ const Products = () => {
 
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 text-white">
-                <h3 className="text-xl xl:text-2xl 2xl:text-3xl font-semibold group-hover:translate-y-0 transform -translate-y-full transition-transform duration-500 group-hover:text-mainbtn">
+                <h3 className="text-lg xl:text-2xl 2xl:text-3xl font-semibold group-hover:translate-y-0 transform -translate-y-full transition-transform duration-500 group-hover:text-mainbtn">
                   {prod.name}
                 </h3>
-                <p className="text-xs my-3 group-hover:translate-y-0 transform translate-y-full transition-transform duration-500">
+                <p className="text-[10px] md:text-xs my-1 md:my-3 group-hover:translate-y-0 transform translate-y-full transition-transform duration-500">
                   {prod.disc}
                 </p>
-                <button className="w-fit border hover:border-mainbtn capitalize hover:bg-mainbtn duration-150 px-3 py-1 text-sm group-hover:translate-y-0 transform translate-y-full transition-transform duration-500">
+                <button className="w-fit border hover:border-mainbtn capitalize hover:bg-mainbtn px-3 py-1 text-[10px] md:text-sm group-hover:translate-y-0 transform translate-y-full transition-transform duration-500">
                   Learn More
                 </button>
               </div>

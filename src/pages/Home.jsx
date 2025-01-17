@@ -29,7 +29,7 @@ const Home = () => {
         {/* Content Overlay */}
         <div className="w-11/12 xl:w-10/12 mx-auto pt-32 py-20 md:pt-20 h-full grid grid-cols-1 md:grid-cols-2 gap-5 xl:gap-10 z-20 relative text-white">
           <div className="h-full flex flex-col justify-center gap-3 text-center md:text-left">
-            <h1 className="text-4xl xl:text-5xl font-semibold  bg-gradient-to-r from-mainbtn via-mainbtnhrv to-white bg-clip-text text-transparent">
+            <h1 className="text-3xl sm:text-4xl xl:text-5xl font-semibold  bg-gradient-to-r from-mainbtn via-mainbtnhrv to-white bg-clip-text text-transparent">
             Premium Elevators in Kerala | Aaron Elevators
             </h1>
             <p className="text-sm text-justify tracking-tight">
@@ -115,7 +115,7 @@ const Home = () => {
 
 
       <section className="bg-white py-10 ">
-        <div className="w-11/12 xl:w-10/12 grid grid-cols-1 text-mainclr xl:grid-cols-2 gap-10 mx-auto text-left">
+        <div className="w-11/12 xl:w-10/12 grid grid-cols-1 text-mainclr xl:grid-cols-2 gap-5 xl:gap-10 mx-auto text-left">
           <div className="h-full flex flex-col justify-center">
               <div className="w-fit">
                 <h2 className="text-3xl xl:text-4xl font-semibold capitalize">
@@ -126,20 +126,20 @@ const Home = () => {
               <p className="mt-5 text-sm">As leading elevator manufacturers in Kerala, our commitment to excellence sets us apart. We've earned our reputation by delivering best house elevations in Kerala through our unwavering focus on quality and innovation. Our team of experts ensures that every project, from home lifts in Kerala to commercial installations, receives meticulous attention to detail.</p>
               <h4 className="text-mainbtn font-medium mt-3">What Makes Us Unique Lift company in Kerala Industry -</h4>
           </div>
-          <div className=" grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 mt-5">
-                <div className="border bg-white h-48 xl:h-60 flex flex-col justify-center p-5 rounded-tl-[3rem] rounded-br-[3rem]">
+          <div className=" grid grid-cols-2 gap-2 md:gap-3 mt-5">
+                <div className="border bg-white h-40 xl:h-60 flex flex-col justify-center p-2 md:p-5 rounded-tl-3xl rounded-br-3xl md:rounded-tl-[3rem] md:rounded-br-[3rem]">
                     <h4 className="text-sm md:text-base xl:text-lg font-medium pb-2">Superior Customer Service</h4>
                     <p className="text-[10px] md:text-sm">Our dedication to customer satisfaction makes us the best lift company in Kerala. We provide comprehensive support throughout your elevator's lifecycle.</p>
                 </div>
-                <div className="border bg-gradient-to-r from-mainbtn to-mainbtnhrv2 text-white rounded-tl-[3rem] rounded-br-[3rem] h-48 xl:h-60 flex flex-col justify-center p-5 ">
+                <div className="border bg-gradient-to-r from-mainbtn to-mainbtnhrv2 text-white rounded-tl-3xl rounded-br-3xl md:rounded-tl-[3rem] md:rounded-br-[3rem] h-40 xl:h-60 flex flex-col justify-center p-2 md:p-5 ">
                     <h4 className="text-sm md:text-base xl:text-lg font-medium pb-2">Modernization Solutions</h4>
                     <p className="text-[10px] md:text-sm">We offer cutting-edge upgrades to existing elevators in Kerala, ensuring your systems stay current with the latest technology.</p>
                 </div>
-                <div className="border bg-gradient-to-r from-mainbtn to-mainbtnhrv2 text-white rounded-tl-[3rem] rounded-br-[3rem] h-48 xl:h-60 flex flex-col justify-center p-5">
+                <div className="border bg-gradient-to-r from-mainbtn to-mainbtnhrv2 text-white rounded-tl-3xl rounded-br-3xl md:rounded-tl-[3rem] md:rounded-br-[3rem] h-40 xl:h-60 flex flex-col justify-center p-2 md:p-5">
                     <h4 className="text-sm md:text-base xl:text-lg font-medium pb-2">Supply & Installation</h4>
                     <p className="text-[10px] md:text-sm">Our end-to-end service includes professional installation by certified technicians, maintaining the highest safety standards.</p>
                 </div>
-                <div className="border bg-white h-48 xl:h-60 flex flex-col justify-center p-5 rounded-tl-[3rem] rounded-br-[3rem]">
+                <div className="border bg-white h-40 xl:h-60 flex flex-col justify-center p-2 md:p-5 rounded-tl-3xl rounded-br-3xl md:rounded-tl-[3rem] md:rounded-br-[3rem]">
                     <h4 className="text-sm md:text-base xl:text-lg font-medium pb-2">24/7 Services</h4>
                     <p className="text-[10px] md:text-sm">Round-the-clock support ensures your elevator systems operate reliably, making us the most dependable elevator company in Kerala.</p>
                 </div>

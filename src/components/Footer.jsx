@@ -82,7 +82,7 @@ const Footer = () => {
         </div>
       </div>
       <footer className=" bg-gradient-to-r from-gray-800 to-gray-900  backdrop-blur-md text-gray-300">
-        <div className="w-11/12 xl:w-10/12 mx-auto py-10 grid grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-10 gap-x-40">
+        <div className="w-11/12 xl:w-10/12 mx-auto py-10 grid grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-10 gap-x-40">
           <div className="flex flex-col gap-3  ">
             <img
               className="h-10 w-28 md:h-16 md:w-32 object-contain"
@@ -133,7 +133,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-11/12 xl:w-10/12 py-5  border-t-2 border-[#ffffff43] mx-auto text-sm font-extralight  flex flex-col items-center md:items-start gap-y-5 justify-between md:flex-row gap-1">
-          <div className="flex gap-1">
+          <div className="flex gap-1 text-xs md:text-sm">
             <p>© 2025 Aaronelevators |</p>
             <a
               href="https://dostudio.co.in"
@@ -145,7 +145,7 @@ const Footer = () => {
           </div>
           <div className="flex gap-5 text-xl">
             {SocialLinks?.map((dt, i) => (
-              <a href={dt.link} className="hover:text-mainbtn" key={i}>
+              <a href={dt.link} className="hover:text-white hover:-translate-y-1 duration-200" key={i}>
                 {dt.icon}
               </a>
             ))}

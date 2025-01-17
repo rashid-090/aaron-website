@@ -36,7 +36,7 @@ const ContactForm = () => {
           <div className="relative">
             <div className="bg-white shadow-2xl  border-2 rounded-0 w-full p-7 md:p-10 md:absolute top-[50%] left-[50] md:-translate-y-[50%]">
                 <h4 className="text-2xl md:text-3xl text-mainclr font-semibold uppercase">contact us</h4>
-                <p className="text-sm text-gray-600 pt-2">Take the first step towards superior vertical mobility.<br/> Contact Kerala's trusted elevation experts for a consultation.</p>
+                <p className="text-xs md:text-sm text-gray-600 pt-2">Take the first step towards superior vertical mobility.<br className="hidden md:block"/> Contact Kerala's trusted elevation experts for a consultation.</p>
                 <form className="flex flex-col gap-5 mt-5">
                     <input className="focus:border-mainbtn py-2 border-b w-full" type="text"  placeholder="Full Name"/>
                     <input className="focus:border-mainbtn py-2 border-b  w-full" type="email"  placeholder="Email Address"/>
