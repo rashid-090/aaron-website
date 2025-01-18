@@ -59,25 +59,8 @@ input,textarea,select::placeholder{
   }
 }
 
-.custom-shape-divider-bottom-1737109029 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-  z-index: 99;
-}
 
-.custom-shape-divider-bottom-1737109029 svg {
-  position: relative;
-  display: block;
-  width: calc(168% + 1.3px);
-  height: 36px;
-  transform: rotateY(180deg);
-}
 
-.custom-shape-divider-bottom-1737109029 .shape-fill {
-  fill: #FFFFFF;
+.counter{
+  box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.1);
 }

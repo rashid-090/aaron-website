@@ -58,7 +58,7 @@ const Footer = () => {
   return (
     <>
       <div
-        className={`fixed bottom-4 right-4 ${
+        className={`fixed bottom-4 md:bottom-6 right-4 md:right-6 ${
           visible ? "opacity-100" : "opacity-0"
         } transition-opacity duration-300`}
         style={{ zIndex: 100 }}
@@ -81,32 +81,28 @@ const Footer = () => {
           </button>
         </div>
       </div>
-      <footer className=" bg-gradient-to-r from-gray-800 to-gray-900  backdrop-blur-md text-gray-300">
-        <div className="w-11/12 xl:w-10/12 mx-auto py-10 grid grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-10 gap-x-40">
-          <div className="flex flex-col gap-3  ">
+      <footer className="md:rounded-b-lg bg-white">
+        <div className="w-full py-10 grid grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-10 gap-x-40">
+          <div className="flex flex-col items-center justify-center text-center gap-3  ">
             <img
               className="h-10 w-28 md:h-16 md:w-32 object-contain"
               src={AaronLogo}
               alt=""
             />
-            <p className="text-sm ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-              cum facilis quisquam nobis eligendi natus earum nisi perspiciatis
-              ut consequatur.
-            </p>
+           
           </div>
-          <div className="">
-            {/* <h4 className="font-semibold text-xl xl:text-xl tracking-widest capitalize mb-3 ">
-              We Provide
+          <div className=" flex flex-col items-center">
+            <h4 className="font-semibold text-xl xl:text-xl tracking-widest capitalize mb-3 ">
+              Quick links
             </h4>
-            <div className="text-sm tracking-wider">
-              <p>Modal Lift a</p>
-              <p>Modal Lift b</p>
-              <p>Modal Lift c</p>
-              <p>Modal Lift d</p>
-            </div> */}
+            <div className="text-sm tracking-wider flex flex-col gap-1">
+              <a href="#">Home</a>
+              <a href="#">Home</a>
+              <a href="#">Home</a>
+              <a href="#">Home</a>
+            </div>
           </div>
-          <div className="flex flex-col gap-1 ">
+          <div className="flex flex-col items-center gap-1 ">
             <h4 className="font-semibold text-xl tracking-widest uppercase mb-3 ">
               Address
             </h4>

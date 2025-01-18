@@ -13,7 +13,7 @@ const Home = lazy(() => import("./pages/Home"));
 
 const Layout = () => {
   return(
-    <div className="app 2xl:max-w-[2500px] mx-auto min-h-screen flex flex-col justify-between">
+    <div className="app w-full w-[98%] my-3  overflow-hidden 2xl:max-w-[2500px] mx-auto min-h-screen flex flex-col justify-between">
       <Header/>
       <ScrollToTop />
       <Outlet />

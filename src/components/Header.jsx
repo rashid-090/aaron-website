@@ -16,28 +16,28 @@ const Header = () => {
 
   return (
     <nav
-      className={`fixed w-full left-0 top-0 z-[999] transition-all duration-300 py-3 ${!isScrolled ? "bg-transparent xl:py-5" : "bg-[#0000003d] backdrop-blur-md xl:py-1"}`}
+      className={`fixed w-[96%] mx-auto left-[50%] -translate-x-[50%]  z-[999] transition-all duration-300 xl:py-1 rounded-lg ${!isScrolled ? "bg-white backdrop-blur-md top-6" : "bg-white backdrop-blur-md top-3"}`}
     >
-      <div className="w-11/12 xl:w-10/12 mx-auto  flex items-center justify-between">
-        <img className="h-10 w-28 md:h-16 md:w-32 object-contain" src={AaronLogo} alt="Logo" />
+      <div className="px-3 py-2 flex items-center justify-between">
+        <img className="h-10 w-28 md:h-12 md:w-32 rounded-lg object-contain" src={AaronLogo} alt="Logo" />
         <div className="flex items-center gap-16">
           <ul
-            className={`hidden lg:flex gap-10 text-sm tracking-wider !uppercase ${
+            className={`hidden lg:flex gap-10 text-sm tracking-wider !capitalize font-light ${
               !isScrolled ? "":""
-            } capitalize text-white`}
+            } capitalize text-black`}
           >
             <li>Home</li>
             <li>About</li>
-            <li>Services</li>
+            <li>Products</li>
             <li>Blog</li>
-            <li>Contact</li>
+            <li>Contact us</li>
           </ul>
           <button
             className={`${
               !isScrolled ? "" : ""
-            }  bg-mainbtn border-2 border-mainbtn text-white hover:text-white  duration-150  px-3  text-sm py-2  `}
+            }  bg-mainbtn border-2 border-mainbtn text-white hover:text-white rounded-lg duration-150  px-3  text-sm py-2  `}
           >
-            <Link>CONTACT US</Link>
+            <Link>CALL NOW</Link>
           </button>
         </div>
       </div>

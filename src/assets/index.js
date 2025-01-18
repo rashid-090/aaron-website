@@ -1,6 +1,8 @@
-import AaronLogo from './images/logo/logo_aaron.png'
+import AaronLogo from './images/logo/logo_aaron copy.png'
 import Liftvid from './video/lift.mp4'
 import LiftvidPost from './images/logo/vidposter.webp'
+
+import Ban1 from './images/ban1.webp'
 
 import Lft1 from './images/lift/lift1.webp' 
 import Lft2 from './images/lift/lift2.webp' 
@@ -23,7 +25,7 @@ import ServMRL from './images/services/MRL elevator.svg'
 import ClintLogo from './images/client-demo.jpg'
 
 export{
-    AaronLogo,
+    AaronLogo,Ban1,
     Liftvid,
     LiftvidPost,
     Lft1,Lft2,Lft3,Lft4,

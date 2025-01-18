@@ -7,51 +7,71 @@ import { Lft1, Lft2, Lft3, Lft4 } from "../assets";
 
 const OurProducts = [
   {
-    name: `Modal 1`,
-    disc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cum facilis`,
+    name: `Home Elevators`,
+    disc: `Custom-designed solutions perfect for residential spaces`,
     prodimage: Lft1,
   },
   {
-    name: `Modal 2`,
-    disc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cum facilis`,
+    name: `Passenger Elevators`,
+    disc: `Efficient people movers for commercial buildings`,
     prodimage: Lft2,
   },
   {
-    name: `Modal 3`,
-    disc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cum facilis`,
+    name: `Commercial Elevators`,
+    disc: `High-capacity solutions for business environments`,
     prodimage: Lft3,
   },
   {
-    name: `Modal 4`,
-    disc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cum facilis`,
+    name: `Structural Elevators`,
+    disc: `Robust systems for industrial applications`,
     prodimage: Lft4,
   },
   {
-    name: `Modal 1`,
-    disc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cum facilis`,
+    name: `Capsule Elevators`,
+    disc: `Modern panoramic lifting solutions`,
     prodimage: Lft1,
   },
   {
-    name: `Modal 2`,
-    disc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cum facilis`,
+    name: `Glass Elevators`,
+    disc: `Elegant, transparent vertical transportation`,
     prodimage: Lft2,
   },
   {
-    name: `Modal 3`,
-    disc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cum facilis`,
+    name: `Car Elevators`,
+    disc: `Specialized solutions for automotive transportation`,
     prodimage: Lft3,
   },
   {
-    name: `Modal 4`,
-    disc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cum facilis`,
+    name: `Hospital Elevators`,
+    disc: `Medical-grade elevation systems`,
     prodimage: Lft4,
+  },
+  {
+    name: `Freight Elevators`,
+    disc: `Heavy-duty cargo transportation`,
+    prodimage: Lft1,
+  },
+  {
+    name: `Dumbwaiter Elevators`,
+    disc: `Compact service lifting solutions`,
+    prodimage: Lft1,
+  },
+  {
+    name: `Kitchen Elevators`,
+    disc: `Specialized food service transportation`,
+    prodimage: Lft2,
+  },
+  {
+    name: `MRL Elevators`,
+    disc: `Space-saving machine room-less systems`,
+    prodimage: Lft3,
   },
 ];
 
 // Custom Previous Arrow
 const PrevArrow = ({ onClick }) => (
   <button
-    className="absolute -left-2 z-20 top-1/2 transform -translate-y-1/2 bg-mainbtn text-white p-2 rounded-full shadow-lg hover:bg-mainbtnhrv"
+    className="absolute right-12 z-20 -bottom-14 transform -translate-y-1/2  p-2 px-3 rounded-lg shadow-lg bg-mainbtn text-white"
     onClick={onClick}
   >
     <FaArrowLeft />
@@ -61,7 +81,7 @@ const PrevArrow = ({ onClick }) => (
 // Custom Next Arrow
 const NextArrow = ({ onClick }) => (
   <button
-    className="absolute -right-2 z-20 top-1/2 transform -translate-y-1/2 bg-mainbtn text-white p-2 rounded-full shadow-lg hover:bg-mainbtnhrv"
+    className="absolute right-0 z-20 -bottom-14 transform -translate-y-1/2  p-2 px-3 rounded-lg shadow-lg bg-mainbtn text-white"
     onClick={onClick}
   >
     <FaArrowRight />
@@ -71,7 +91,7 @@ const NextArrow = ({ onClick }) => (
 const Products = () => {
   const settings = {
     dots: false,
-    arrows:false,
+    arrows:true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -114,11 +134,11 @@ const Products = () => {
   };
 
   return (
-    <div className="mt-8 relative">
+    <div className="mt-5 relative">
       <Slider {...settings}>
         {OurProducts.map((prod, i) => (
           <div key={i} className="p-1 z-10">
-            <div className="relative group overflow-hidden bg-gray-100 shadow rounded-3xl">
+            <div className="relative group overflow-hidden bg-gray-100 shadow rounded-lg text-left">
               {/* Product Image */}
               <img
                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
@@ -127,14 +147,14 @@ const Products = () => {
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 xl:p-8 text-white">
-                <h3 className="text-lg xl:text-2xl 2xl:text-3xl font-semibold group-hover:translate-y-0 transform -translate-y-full transition-transform duration-500 group-hover:text-mainbtn">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent 0 transition-opacity duration-500 flex flex-col justify-end p-4 xl:p-8 text-white">
+                <h3 className="text-lg xl:text-2xl xl:pr-40 font-medium text-mainbtn">
                   {prod.name}
                 </h3>
-                <p className="text-[10px] md:text-xs my-1 md:my-3 group-hover:translate-y-0 transform translate-y-full transition-transform duration-500">
+                <p className="text-[10px] md:text-xs my-1 md:my-3 ">
                   {prod.disc}
                 </p>
-                <button className="w-fit border hover:border-mainbtn capitalize hover:bg-mainbtn px-3 py-1 text-[10px] md:text-sm group-hover:translate-y-0 transform translate-y-full transition-transform duration-500">
+                <button className="w-fit border hover:border-mainbtn capitalize hover:bg-mainbtn px-3 py-1 text-[10px] md:text-sm ">
                   Learn More
                 </button>
               </div>

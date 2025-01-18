@@ -27,7 +27,7 @@ export default {
         // extrabold: ["poppins-extrabold", "sans-serif"],
       },
       backgroundImage: {
-        "home-bg": "url('./assets/images/heera-bg.webp')",
+        "home-bg": "url('./assets/images/ban1.webp')",
       },
     },
   },

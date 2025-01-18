@@ -38,22 +38,22 @@ const FAQAccordion = () => {
 
   return (
     <>
-      <div className="w-11/12 xl:w-10/12 mx-auto grid grid-cols-1 xl:grid-cols-3 gap-5 md:gap-10 text-mainclr">
-            <div className="h-full flex justify-center items-start flex-col gap-5 mb-10">
-                <h2 className="text-3xl xl:text-4xl font-semibold capitalize">
-                FAQ
+      <div className="w-full mx-auto grid grid-cols-1 xl:grid-cols-2 gap-5 md:gap-10 text-mainclr">
+            <div className="h-full flex justify-center text-center md:text-left items-center flex-col gap-2 mb-10">
+                <div className="space-y-2">
+                <h2 className="text-3xl xl:text-5xl font-normal capitalize">
+                Frequently Asked<br/> <span className="text-mainbtn">Questions</span>
                 </h2>
-                <div className="h-1 w-14 -mt-6 bg-gradient-to-r from-mainbtn via-mainbtnhrv to-white"></div>
+              
                 <p className="text-sm">Find Answers to Common Questions.</p>
-                <button className="border-2 border-mainbtn w-fit px-3 h-10 text-mainbtn hover:bg-mainbtn hover:text-white duration-150">
-              Learn more
-            </button>
+                </div>
+             
           </div>
-        <div className="xl:col-span-2 space-y-3">
+        <div className=" space-y-3">
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className="  bg-gray-100 rounded-lg text-mainclr"
+              className="  bg-white0 rounded-lg text-mainclr"
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -75,7 +75,7 @@ const FAQAccordion = () => {
                   activeIndex === index ? "max-h-screen" : "max-h-0"
                 }`}
               >
-                <div className="p-5 border-t-2 text-xs md:text-sm font-light">
+                <div className="p-5 text-xs md:text-sm font-light">
                   {faq.answer}
                 </div>
               </div>
