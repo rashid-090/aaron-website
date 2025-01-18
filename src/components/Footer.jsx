@@ -103,7 +103,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col items-center gap-1 ">
-            <h4 className="font-semibold text-xl tracking-widest uppercase mb-3 ">
+            <h4 className="font-semibold text-xl tracking-widest capitalize mb-3 ">
               Address
             </h4>
             <p className="text-sm ">
