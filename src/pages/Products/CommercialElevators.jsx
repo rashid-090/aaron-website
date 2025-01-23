@@ -3,11 +3,12 @@ import ProductShowcase from "../../components/ProductShowcase";
 import Gallery from "../../components/Gallery";
 import { ContactForm, Faq } from "../../components";
 import { Ban1 } from "../../assets";
+import { motion, AnimatePresence } from "framer-motion";
 
 const CommercialElevators = () => {
   const tabs = ["Description", "Features", "Specifications"];
   const [activeTab, setActiveTab] = useState(0); // Track the active tab
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [direction, setDirection] = useState(0); // 1 for right, -1 for left
 
   // Content for each tab
   const tabContent = [
@@ -304,15 +305,28 @@ const CommercialElevators = () => {
   ];
 
   const handleTabChange = (index) => {
-
-    
-    setIsAnimating(true);
-
-    setTimeout(() => {
-      setActiveTab(index); // Update the active tab after animation
-      setIsAnimating(false); // End animation
-    }, 200); // Match this duration to the CSS transition duration
+    setDirection(index > activeTab ? 1 : -1); // Set direction based on the index
+    setActiveTab(index);
   };
+
+   // Framer Motion variants for animation
+   const variants = {
+    enter: (direction) => ({
+      x: direction === 1 ? "100%" : "-100%", // Slide in from the left or right
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.250 }, // Adjust duration as needed
+    },
+    exit: (direction) => ({
+      x: direction === 1 ? "-100%" : "100%", // Slide out to the left or right
+      opacity: 0,
+      transition: { duration: 0.250 }, // Match this with "center"
+    }),
+  };
+
 
   return (
     <div className="pt-28 px-2 md:px-0 md:w-9/12 mx-auto w-full">
@@ -344,9 +358,24 @@ const CommercialElevators = () => {
           </button>
         ))}
       </div>
-      <div className={`mt-10 transition-opacity  duration-300 ${isAnimating ? "opacity-0" : "opacity-100"}`}>
-        {tabContent[activeTab]}
+
+      {/* Animated Content Area */}
+      <div className="mt-10 overflow-hidden">
+        <AnimatePresence custom={direction} mode="popLayout">
+          <motion.div
+            key={activeTab} // Unique key for each tab to trigger animation
+            className=" w-full"
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            custom={direction} // Pass direction to the variants
+          >
+            {tabContent[activeTab]}
+          </motion.div>
+        </AnimatePresence>
       </div>
+
       <section className="mt-10">
         <div className="relative p-5 py-20 h-full flex justify-center items-center rounded-lg overflow-hidden">
           <img

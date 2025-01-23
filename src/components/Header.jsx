@@ -11,7 +11,7 @@ const Header = () => {
   const menus = [
     { name: "home", link: "/" },
     { name: "about", link: "/about" },
-    { name: "products", link: "/products" },
+    { name: "products", link: "/products/commercial-elevators" },
     { name: "contact us", link: "/contact-us" },
   ];
 
@@ -50,35 +50,14 @@ const Header = () => {
               <li
                 key={index}
                 className="relative hover:cursor-pointer py-4 hover:text-mainbtn duration-100"
-                onMouseEnter={() =>
-                  menu.name === "products" && setIsDropdownVisible(true)
-                }
-                onMouseLeave={() =>
-                  menu.name === "products" && setIsDropdownVisible(false)
-                }
+                onClick={()=>navigate(menu.link)}
               >
                 {menu.name
                   .toLowerCase()
                   .replace(/^./, (firstChar) => firstChar.toUpperCase())}
 
                 {/* Dropdown for Products */}
-                {menu.name === "products" && isDropdownVisible && (
-                  <ul
-                    className="absolute top-2 left-0 bg-white shadow-lg rounded-lg p-3 space-y-2 opacity-0 animate-fadeIn"
-                    onMouseEnter={() => setIsDropdownVisible(true)}
-                    onMouseLeave={() => setIsDropdownVisible(false)}
-                  >
-                    {products.map((product, i) => (
-                      <li
-                        key={i}
-                        onClick={() => navigate(product.link)}
-                        className="hover:text-mainbtn hover:cursor-pointer"
-                      >
-                        {product.name}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                
               </li>
             ))}
           </ul>
