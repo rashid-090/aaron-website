@@ -1,35 +1,9 @@
 import React, { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
-const faqData = [
-  {
-    question: `What makes Aaron Elevators stand out among elevator companies in Kerala?`,
-    answer: `Our 16+ years of expertise, comprehensive service portfolio, and commitment to quality make us a leading choice for elevators in Kerala. We combine innovative technology with superior customer service to deliver exceptional vertical transportation solutions.`,
-  },
-  {
-    question: `How do you ensure the safety of your home elevators in Kerala?`,
-    answer: `We implement rigorous safety protocols, use certified components, and conduct regular maintenance checks. Our home lifts in Kerala comply with international safety standards and undergo thorough testing before installation.`,
-  },
-  {
-    question: `What types of maintenance services do you offer for elevators in Kerala?`,
-    answer: `We provide comprehensive maintenance packages including 24/7 emergency support, preventive maintenance, and regular safety inspections to ensure your elevator's optimal performance and longevity.`,
-  },
-  {
-    question: `How long does it typically take to install home lifts in Kerala?`,
-    answer: `Installation timeframes vary based on the project complexity, but typically range from 3-7 days for standard home elevators. We ensure minimal disruption while maintaining our quality standards.`,
-  },
-  {
-    question: `What factors should I consider when choosing the best elevator company in Kerala?`,
-    answer: `Consider factors like experience, service quality, safety standards, maintenance support, and customer reviews. Look for companies offering comprehensive solutions and proven expertise in elevator manufacturing and installation.`,
-  },
-  {
-    question: `Do you provide customization options for residential elevators in Kerala?`,
-    answer: `Yes, we offer extensive customization options for home elevators, including design, capacity, safety features, and finishes to match your specific requirements and architectural preferences.`,
-  },
- 
-];
 
-const FAQAccordion = () => {
+
+const FAQAccordion = ({ faqData }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -39,22 +13,19 @@ const FAQAccordion = () => {
   return (
     <>
       <div className="w-full mx-auto grid grid-cols-1 xl:grid-cols-2 gap-5 md:gap-10 text-mainclr">
-            <div className="h-full flex justify-center text-center md:text-left items-center flex-col gap-2 mb-10">
-                <div className="space-y-2">
-                <h2 className="text-3xl xl:text-5xl font-normal capitalize">
-                Frequently Asked<br/> <span className="text-mainbtn">Questions</span>
-                </h2>
-              
-                <p className="text-sm">Find Answers to Common Questions.</p>
-                </div>
-             
+        <div className="h-full flex justify-center text-center md:text-left items-center flex-col gap-2 mb-10">
+          <div className="space-y-2">
+            <h2 className="text-3xl xl:text-5xl font-normal capitalize">
+              Frequently Asked
+              <br /> <span className="text-mainbtn">Questions</span>
+            </h2>
+
+            <p className="text-sm">Find Answers to Common Questions.</p>
           </div>
+        </div>
         <div className=" space-y-3">
           {faqData.map((faq, index) => (
-            <div
-              key={index}
-              className="  bg-white0 rounded-lg text-mainclr"
-            >
+            <div key={index} className="  bg-white0 rounded-lg text-mainclr">
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full flex justify-between items-center text-left px-5 py-3  font-medium"
