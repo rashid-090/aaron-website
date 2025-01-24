@@ -24,8 +24,8 @@ const Header = () => {
 
   const products = [
     { name: "Elevators", link: "/products/commercial-elevators" },
-    { name: "Escalators", link: "/products/commercial-elevators" },
-    { name: "Lifts", link: "/products/commercial-elevators" },
+    { name: "Elevators", link: "/products/commercial-elevators" },
+    { name: "Elevators", link: "/products/commercial-elevators" },
   ];
 
   useEffect(() => {

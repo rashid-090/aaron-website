@@ -16,6 +16,7 @@ import CommercialElevators from "./pages/Products/CommercialElevators";
 import CapsuleElevators from "./pages/Products/CapsuleElevators";
 import GlassElevators from "./pages/Products/GlassElevators";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 const Home = lazy(() => import("./pages/Home"));
 
@@ -84,6 +85,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingScrn />}>
             <GlassElevators />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/contact-us",
+        element: (
+          <Suspense fallback={<LoadingScrn />}>
+            <Contact />
           </Suspense>
         ),
       },

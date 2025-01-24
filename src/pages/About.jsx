@@ -10,7 +10,7 @@ const About = () => {
           <img
             src={Lft3}
             alt="Main"
-            className="w-full aspect-square  md:aspect-video object-cover h-auto rounded-lg shadow-lg"
+            className="w-full aspect-square  md:h-[60vh] object-cover h-auto rounded-lg shadow-lg overflow-hidden"
           />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-[#00000055] h-full w-full rounded-lg text-white flex flex-col items-center justify-center gap-5">
             <h1 className="text-3xl xl:text-6xl font-medium capitalize pt-10 md:pt-0">
@@ -27,12 +27,12 @@ const About = () => {
         <div className="py-5 xl:pt-14 grid grid-cols-1 xl:grid-cols-2 gap-10">
           <div className="flex flex-col  gap-5  h-full  justify-center">
             <h1 className="text-3xl xl:text-5xl font-medium capitalize ">
-            <span className="text-mainbtn">Our Story</span>: Pioneering Vertical<br className="hidden md:block"/> Transportation in Kerala
+           <span className="text-mainbtn">Pioneering Vertical</span><br className="hidden md:block"/> Transportation in Kerala
             </h1>
-            <p className="mx-auto text-sm text-justify tracking-wide md:tracking-wide md:w-full ">
+            <p className="mx-auto text-sm text-justify tracking-wide md:tracking-wide font-light md:w-full ">
             Founded over 15 years ago, Aaron Elevators has grown from a local lift manufacturer to a trusted name in vertical transportation. We're not just building elevators; we're creating pathways that connect spaces and people. Our journey began with a simple mission: to provide Kerala's residents and businesses with world-class elevator solutions that prioritize safety, innovation, and reliability.
             </p>
-            <p className="mx-auto text-sm text-justify tracking-wide md:tracking-wide md:w-full ">
+            <p className="mx-auto text-sm text-justify tracking-wide md:tracking-wide font-light md:w-full ">
             Our state-of-the-art manufacturing facility houses a team of skilled professionals who breathe life into every elevator we design. We understand that each building, each space has its unique character, and our elevators are crafted to complement and enhance that individuality. From cozy homes to expansive commercial complexes, we've been the silent partners in Kerala's architectural evolution.            </p>
           </div>
           <div>
