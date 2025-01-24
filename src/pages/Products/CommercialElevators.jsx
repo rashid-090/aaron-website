@@ -329,10 +329,11 @@ const CommercialElevators = () => {
 
 
   return (
+    <>
     <div className="pt-28 px-2 md:px-0 md:w-9/12 mx-auto w-full">
       <div className="text-center my-10 space-y-3">
         <h1 className="text-3xl sm:text-4xl xl:text-6xl font-normal">
-          Commercial Elevators in Kerala: Aaron Elevators
+          Commercial Elevators in Keralas
         </h1>
         <p className="xl:w-[80%] mx-auto text-sm text-center font-extralight tracking-wide md:tracking-wide md:w-full ">
           At Aaron Elevators, we're bringing reliable commercial elevators in
@@ -402,10 +403,11 @@ const CommercialElevators = () => {
           </div>
         </div>
       </section>
-      <div className="mt-20">
+    </div>
+      <div className="mt-20 w-10/12 mx-auto">
         <Faq faqData={faqData} />
       </div>
-    </div>
+    </>
   );
 };
 

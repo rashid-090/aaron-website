@@ -131,7 +131,7 @@ const Home = () => {
           <div className="relative w-[90%] md:w-[70%] mx-auto mt-3">
             {/* <RiDoubleQuotesL className="text-8xl text-[#efb03b2d] -left-40 -top-4  absolute"/> */}
             {/* <RiDoubleQuotesL className="text-8xl text-[#efb03b2d] -right-40 -top-4 scale-x-[1] rotate-180 absolute"/> */}
-            <p className=" text-sm text-justify md:text-center tracking-tighter font-light">
+            <p className=" text-sm text-justify md:text-center">
               As pioneering lift companies in Kerala, we understand that every
               project demands unique elevation solutions. Whether you're looking
               for home elevators in Kerala or commercial installations, our

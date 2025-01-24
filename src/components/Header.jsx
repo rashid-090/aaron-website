@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { AaronLogo } from "../assets";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { HiOutlineMenuAlt1 } from "react-icons/hi";
+import { IoIosClose } from "react-icons/io";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileSubmenuOpen, setIsMobileSubmenuOpen] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation(); // Get current location
 
   const menus = [
     { name: "home", link: "/" },
@@ -16,9 +23,9 @@ const Header = () => {
   ];
 
   const products = [
-    { name: "Elevators", link: "/products/elevators" },
-    { name: "Escalators", link: "/products/escalators" },
-    { name: "Lifts", link: "/products/lifts" },
+    { name: "Elevators", link: "/products/commercial-elevators" },
+    { name: "Escalators", link: "/products/commercial-elevators" },
+    { name: "Lifts", link: "/products/commercial-elevators" },
   ];
 
   useEffect(() => {
@@ -30,6 +37,18 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleMobileSubmenu = () => {
+    setIsMobileSubmenuOpen(!isMobileSubmenuOpen);
+  };
+
+
+  const isActive = (path) => location.pathname === path; // Check if path is active
+
+
   return (
     <nav
       className={`fixed w-[96%] mx-auto left-[50%] -translate-x-[50%] z-[999] transition-all duration-300 xl:py-1 rounded-lg ${
@@ -39,33 +58,151 @@ const Header = () => {
       }`}
     >
       <div className="px-3 py-2 flex items-center justify-between">
-        <img
-          className="h-10 w-28 md:h-12 md:w-32 rounded-lg object-contain"
-          src={AaronLogo}
-          alt="Logo"
-        />
-        <div className="flex items-center gap-16">
-          <ul className="hidden lg:flex gap-10 text-sm tracking-wider font-light text-black">
-            {menus.map((menu, index) => (
-              <li
-                key={index}
-                className="relative hover:cursor-pointer py-4 hover:text-mainbtn duration-100"
-                onClick={()=>navigate(menu.link)}
-              >
-                {menu.name
-                  .toLowerCase()
-                  .replace(/^./, (firstChar) => firstChar.toUpperCase())}
+        <Link to={"/"}>
+          <img
+            className="h-10 w-28 md:h-12 md:w-32 rounded-lg object-contain"
+            src={AaronLogo}
+            alt="Logo"
+          />
+        </Link>
+{/* Desktop Menu */}
+<div className="hidden lg:flex items-center gap-16">
+  <ul className="flex gap-10 text-sm tracking-wider font-light text-black">
+    {menus.map((menu, index) => (
+      <li
+        key={index}
+        className={`relative group hover:cursor-pointer py-4 hover:text-mainbtn ${
+          isActive(menu.link) ? "text-mainbtn" : ""
+        } duration-100 flex items-center`}
+        onClick={() => menu.name.toLowerCase() !== "products" && navigate(menu.link)} // Prevent click navigation for "Products"
+        onMouseEnter={() =>
+          menu.name.toLowerCase() === "products" &&
+          setIsDropdownVisible(true)
+        }
+        onMouseLeave={() =>
+          menu.name.toLowerCase() === "products" &&
+          setIsDropdownVisible(false)
+        }
+      >
+        <span className="flex items-center">
+          {menu.name
+            .toLowerCase()
+            .replace(/^./, (firstChar) => firstChar.toUpperCase())}
+          {menu.name.toLowerCase() === "products" && (
+            <span
+              className={`ml-1 text-xl text-gray-500 group-hover:text-mainbtn transition-transform duration-300 ${
+                isDropdownVisible ? "rotate-180" : ""
+              }`}
+            >
+              <MdKeyboardArrowDown />
+            </span>
+          )}
+        </span>
 
-                {/* Dropdown for Products */}
-                
+        {/* Dropdown for Products */}
+        {menu.name.toLowerCase() === "products" && (
+          <ul
+            className={`absolute top-12 left-0 bg-white shadow-md rounded-md py-2 w-40 overflow-hidden transition-all duration-500 ease-in-out ${
+              isDropdownVisible
+                ? "max-h-40 opacity-100 visible"
+                : "max-h-0 opacity-0 invisible"
+            }`}
+          >
+            {products.map((product, i) => (
+              <li
+                key={i}
+                className="px-4 py-2 text-sm hover:bg-gray-100 hover:text-mainbtn text-black cursor-pointer"
+                onClick={() => navigate(product.link)}
+              >
+                {product.name}
               </li>
             ))}
           </ul>
-          <button className="bg-mainbtn border-2 border-mainbtn text-white hover:text-white rounded-lg duration-150 px-3 text-sm py-2">
-            <Link>CALL NOW</Link>
+        )}
+      </li>
+    ))}
+  </ul>
+  <button className="bg-mainbtn border-2 border-mainbtn text-white hover:text-white rounded-lg duration-150 px-3 text-sm py-2">
+    <Link to="/">CALL NOW</Link>
+  </button>
+</div>
+
+
+
+        {/* Mobile Menu Toggle */}
+        <div className="lg:hidden flex items-center">
+          <button
+            onClick={toggleMobileMenu}
+            className="text-2xl text-mainbtn focus:outline-none"
+          >
+            {isMobileMenuOpen ? <IoIosClose /> : <HiOutlineMenuAlt1 />}
           </button>
         </div>
       </div>
+
+   {/* Mobile Menu */}
+{isMobileMenuOpen && (
+  <div className="lg:hidden bg-white shadow-md rounded-md py-4 px-3">
+    <ul className="flex flex-col gap-4 text-sm tracking-wider font-light text-black">
+      {menus.map((menu, index) => (
+        <li key={index} className="hover:text-mainbtn cursor-pointer">
+          {menu.name.toLowerCase() === "products" ? (
+            <div>
+              {/* Dropdown Toggle */}
+              <div
+                className="flex justify-between items-center"
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent interference with submenu clicks
+                  toggleMobileSubmenu();
+                }}
+              >
+                <span>{menu.name.toLowerCase().replace(/^./, (firstChar) => firstChar.toUpperCase())}</span>
+                <span>{isMobileSubmenuOpen ? "-" : "+"}</span>
+              </div>
+              {/* Submenu Items */}
+              <div
+                className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
+                  isMobileSubmenuOpen ? "max-h-40" : "max-h-0"
+                }`}
+              >
+                <ul className="ml-4 mt-2">
+                  {products.map((product, i) => (
+                    <li
+                      key={i}
+                      className="py-1 hover:text-mainbtn cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation(); // Ensure click only navigates
+                        navigate(product.link);
+                        console.log(product.link);
+                        setIsMobileMenuOpen(false);
+                        setIsMobileSubmenuOpen(false);
+                      }}
+                    >
+                      {product.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ) : (
+            // Non-dropdown menu items
+            <div
+              onClick={() => {
+                navigate(menu.link);
+                setIsMobileMenuOpen(false);
+              }}
+            >
+              {menu.name
+                .toLowerCase()
+                .replace(/^./, (firstChar) => firstChar.toUpperCase())}
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
     </nav>
   );
 };
