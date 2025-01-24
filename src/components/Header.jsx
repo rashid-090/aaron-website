@@ -10,7 +10,7 @@ const Header = () => {
 
   const menus = [
     { name: "home", link: "/" },
-    { name: "about", link: "/about" },
+    { name: "about", link: "/about-us" },
     { name: "products", link: "/products/commercial-elevators" },
     { name: "contact us", link: "/contact-us" },
   ];

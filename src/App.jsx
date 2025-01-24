@@ -15,6 +15,7 @@ import PassengerElevators from "./pages/Products/PassengerElevators";
 import CommercialElevators from "./pages/Products/CommercialElevators";
 import CapsuleElevators from "./pages/Products/CapsuleElevators";
 import GlassElevators from "./pages/Products/GlassElevators";
+import About from "./pages/About";
 
 const Home = lazy(() => import("./pages/Home"));
 
@@ -43,6 +44,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingScrn />}>
             <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/about-us",
+        element: (
+          <Suspense fallback={<LoadingScrn />}>
+            <About />
           </Suspense>
         ),
       },
