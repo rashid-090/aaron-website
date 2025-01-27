@@ -53,7 +53,7 @@ const Home = () => {
         {/* Content Overlay */}
         <div className="w-11/12 xl:w-8/12 mx-auto pt-32 py-20 md:pt-20 h-full grid grid-cols-1 tece gap-5 xl:gap-10 z-20 relative text-white">
           <div className="h-full flex flex-col justify-center items-center gap-3 text-center">
-            <h1 className="text-3xl sm:text-4xl xl:text-6xl font-normal  ">
+            <h1 className="text-3xl sm:text-4xl 2xl:text-6xl font-normal  ">
               Premium Elevators in Kerala.
               <br /> Aaron Elevators
             </h1>
