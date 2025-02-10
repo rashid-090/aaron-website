@@ -53,7 +53,7 @@ const Home = () => {
         {/* Content Overlay */}
         <div className="w-11/12 xl:w-8/12 mx-auto pt-32 py-20 md:pt-20 h-full grid grid-cols-1 tece gap-5 xl:gap-10 z-20 relative text-white">
           <div className="h-full flex flex-col justify-center items-center gap-3 text-center">
-            <h1 className="text-3xl sm:text-4xl 2xl:text-6xl font-normal  ">
+            <h1 className="text-3xl sm:text-4xl xl:text-5xl 2xl:text-6xl font-normal  ">
               Premium Elevators in Kerala.
               <br /> Aaron Elevators
             </h1>
@@ -86,7 +86,7 @@ const Home = () => {
             />
           </div>
           <div className="xl:col-span-2 bg-gray-100 rounded-lg flex p-5 xl:p-10 flex-col gap-3 h-full justify-center text-mainclr">
-            <h2 className="text-3xl xl:text-6xl font-medium capitalize">
+            <h2 className="text-3xl lg:text-6xl font-normal capitalize">
               About
               <br /> <span className="text-mainbtn">Aaron Elevators</span>
             </h2>
@@ -146,7 +146,7 @@ const Home = () => {
 
       <section className="bg-white py-10 xl:pt-20">
         <div className="h-full flex flex-col justify-center text-center ">
-          <h2 className="text-3xl xl:text-5xl font-medium capitalize">
+          <h2 className="text-3xl xl:text-5xl font-normal capitalize">
             Why <span className="text-mainbtn">Aaron Elevators?</span>
           </h2>
 
@@ -217,7 +217,7 @@ const Home = () => {
        */}
       <section className="bg-white pb-20 pt-10  text-mainclr">
         <div className="w-fullo text-center">
-          <h2 className="text-3xl xl:text-5xl font-medium capitalize">
+          <h2 className="text-3xl xl:text-5xl font-normal capitalize">
             our <span className="text-mainbtn">products</span>
           </h2>
           <p className="text-xs md:text-sm">
