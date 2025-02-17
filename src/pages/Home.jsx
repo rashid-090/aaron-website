@@ -1,5 +1,5 @@
 import React from "react";
-import { Liftvid, LiftvidPost, Lft3, Lft2, Ban1 } from "../assets";
+import { Liftvid, LiftvidPost, Lft3, Lft2, Ban1, Lft5 } from "../assets";
 import {
   EnquiryForm,
   Products,
@@ -80,8 +80,8 @@ const Home = () => {
         <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           <div className=" relative overflow-hidden">
             <img
-              className="w-full h-full aspect-square object-cover z-0 rounded-lg"
-              src={Lft2}
+              className="w-full h-full aspect-square object-cover object-bottom z-0 rounded-lg"
+              src={Lft5}
               alt=""
             />
           </div>

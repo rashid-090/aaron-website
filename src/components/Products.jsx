@@ -3,68 +3,68 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { Lft1, Lft2, Lft3, Lft4 } from "../assets";
+import { Lft5,Lft6,Lft7,Lft8 } from "../assets";
 
 const OurProducts = [
   {
     name: `Home Elevators`,
     disc: `Custom-designed solutions perfect for residential spaces`,
-    prodimage: Lft1,
+    prodimage: Lft5,
   },
   {
     name: `Passenger Elevators`,
     disc: `Efficient people movers for commercial buildings`,
-    prodimage: Lft2,
+    prodimage: Lft6,
   },
   {
     name: `Commercial Elevators`,
     disc: `High-capacity solutions for business environments`,
-    prodimage: Lft3,
+    prodimage: Lft7,
   },
   {
     name: `Structural Elevators`,
     disc: `Robust systems for industrial applications`,
-    prodimage: Lft4,
+    prodimage: Lft8,
   },
   {
     name: `Capsule Elevators`,
     disc: `Modern panoramic lifting solutions`,
-    prodimage: Lft1,
+    prodimage: Lft5,
   },
   {
     name: `Glass Elevators`,
     disc: `Elegant, transparent vertical transportation`,
-    prodimage: Lft2,
+    prodimage: Lft6,
   },
   {
     name: `Car Elevators`,
     disc: `Specialized solutions for automotive transportation`,
-    prodimage: Lft3,
+    prodimage: Lft7,
   },
   {
     name: `Hospital Elevators`,
     disc: `Medical-grade elevation systems`,
-    prodimage: Lft4,
+    prodimage: Lft8,
   },
   {
     name: `Freight Elevators`,
     disc: `Heavy-duty cargo transportation`,
-    prodimage: Lft1,
+    prodimage: Lft5,
   },
   {
     name: `Dumbwaiter Elevators`,
     disc: `Compact service lifting solutions`,
-    prodimage: Lft1,
+    prodimage: Lft6,
   },
   {
     name: `Kitchen Elevators`,
     disc: `Specialized food service transportation`,
-    prodimage: Lft2,
+    prodimage: Lft7,
   },
   {
     name: `MRL Elevators`,
     disc: `Space-saving machine room-less systems`,
-    prodimage: Lft3,
+    prodimage: Lft8,
   },
 ];
 

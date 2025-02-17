@@ -7,7 +7,12 @@ import Ban1 from './images/ban1.webp'
 import Lft1 from './images/lift/lift1.webp' 
 import Lft2 from './images/lift/lift2.webp' 
 import Lft3 from './images/lift/lift3.webp' 
-import Lft4 from './images/lift/lift4.webp' 
+import Lft4 from './images/lift/lift4.webp'
+
+import Lft5 from './images/lift/lf2.webp' 
+import Lft6 from './images/lift/lf1.webp' 
+import Lft7 from './images/lift/lf3.webp' 
+import Lft8 from './images/lift/lf4.webp' 
 
 import Servhome from './images/services/home elevator.svg' 
 import Servpassanger from './images/services/passanger elevators.svg' 
@@ -28,7 +33,7 @@ export{
     AaronLogo,Ban1,
     Liftvid,
     LiftvidPost,
-    Lft1,Lft2,Lft3,Lft4,
+    Lft1,Lft2,Lft3,Lft4,Lft5,Lft6,Lft7,Lft8,
     ClintLogo,
     Servhome,Servpassanger,Servcommercial,Servstructure,Servcapsule,Servglass,Servcar,Servhospital,Servfreight,Servbubm,Servkitchen,ServMRL
 }
