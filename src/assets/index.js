@@ -14,6 +14,9 @@ import Lft6 from './images/lift/lf1.webp'
 import Lft7 from './images/lift/lf3.webp' 
 import Lft8 from './images/lift/lf4.webp' 
 
+import commlift from './images/lift/commer elevators.webp' 
+import mainlift from './images/lift/mainlift.webp' 
+
 import Servhome from './images/services/home elevator.svg' 
 import Servpassanger from './images/services/passanger elevators.svg' 
 import Servcommercial from './images/services/Commercial Elevators.svg' 
@@ -33,7 +36,7 @@ export{
     AaronLogo,Ban1,
     Liftvid,
     LiftvidPost,
-    Lft1,Lft2,Lft3,Lft4,Lft5,Lft6,Lft7,Lft8,
+    Lft1,Lft2,Lft3,Lft4,Lft5,Lft6,Lft7,Lft8,commlift,mainlift,
     ClintLogo,
     Servhome,Servpassanger,Servcommercial,Servstructure,Servcapsule,Servglass,Servcar,Servhospital,Servfreight,Servbubm,Servkitchen,ServMRL
 }

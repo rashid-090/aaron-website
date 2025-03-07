@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { LiftvidPost, Lft3, Lft2, Ban1 } from "../assets";
+import { LiftvidPost, Lft3, Lft2, Ban1, mainlift } from "../assets";
 
 const GalleryComponent = () => {
   const [mainImage, setMainImage] = useState(LiftvidPost);
 
-  const images = [LiftvidPost, Lft3, Ban1];
+  const images = [mainlift, Lft3, Ban1];
 
   return (
     <div className="flex flex-col items-center w-full  mx-auto p-4">

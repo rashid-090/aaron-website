@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { Lft5,Lft6,Lft7,Lft8 } from "../assets";
+import { Lft5,Lft6,Lft7,Lft8, commlift } from "../assets";
 
 const OurProducts = [
   {
@@ -19,7 +19,7 @@ const OurProducts = [
   {
     name: `Commercial Elevators`,
     disc: `High-capacity solutions for business environments`,
-    prodimage: Lft7,
+    prodimage: commlift,
   },
   {
     name: `Structural Elevators`,
