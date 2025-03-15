@@ -12,9 +12,8 @@ import {
 
 import { Header, Footer, LoadingScrn } from "./components/index";
 import PassengerElevators from "./pages/Products/PassengerElevators";
-import CommercialElevators from "./pages/Products/CommercialElevators";
-import CapsuleElevators from "./pages/Products/CapsuleElevators";
-import GlassElevators from "./pages/Products/GlassElevators";
+import Catogory from "./pages/Products/Categories";
+import Modal from "./pages/Products/Items";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
@@ -57,37 +56,22 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/products/passenger-elevators",
+        path: "/products/:category",
         element: (
           <Suspense fallback={<LoadingScrn />}>
-            <PassengerElevators />
+            <Catogory />
           </Suspense>
         ),
       },
       {
-        path: "/products/commercial-elevators",
+        path: "/products/:category/:id",
         element: (
           <Suspense fallback={<LoadingScrn />}>
-            <CommercialElevators />
+            <Modal />
           </Suspense>
         ),
       },
-      {
-        path: "/products/capsule-elevators",
-        element: (
-          <Suspense fallback={<LoadingScrn />}>
-            <CapsuleElevators />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/products/glass-elevators",
-        element: (
-          <Suspense fallback={<LoadingScrn />}>
-            <GlassElevators />
-          </Suspense>
-        ),
-      },
+    
       {
         path: "/contact-us",
         element: (

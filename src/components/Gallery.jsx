@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import { LiftvidPost, Lft3, Lft2, Ban1, mainlift } from "../assets";
 
-const GalleryComponent = () => {
-  const [mainImage, setMainImage] = useState(LiftvidPost);
 
-  const images = [mainlift, Lft3, Ban1];
+const GalleryComponent = ({images}) => {
+  const [mainImage, setMainImage] = useState(images[0]);
+
+console.log(images);
 
   return (
     <div className="flex flex-col items-center w-full  mx-auto p-4">
       {/* Main Image */}
       <img
-        src={mainImage}
+        src={mainImage.src}
         alt="Main"
+        loading="lazy"
         className="w-full aspect-video object-cover h-auto rounded-lg shadow-lg mb-4"
       />
 
@@ -20,8 +21,9 @@ const GalleryComponent = () => {
         {images.map((img, index) => (
           <img
             key={index}
-            src={img}
-            alt={`Thumbnail ${index + 1}`}
+            src={img.src}
+            alt={img.alt}
+            loading="lazy"
             onClick={() => setMainImage(img)}
             className="h-12 w-12 md:h-28 md:w-28 cursor-pointer rounded-md lg:rounded-md hover:scale-110 transition-transform duration-200"
           />

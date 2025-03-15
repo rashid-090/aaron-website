@@ -18,7 +18,7 @@ const Header = () => {
   const menus = [
     { name: "home", link: "/" },
     { name: "about", link: "/about-us" },
-    { name: "products", link: "/products/commercial-elevators" },
+    { name: "products", link: "#" },
     { name: "contact us", link: "/contact-us" },
   ];
 

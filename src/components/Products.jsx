@@ -5,68 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Lft5,Lft6,Lft7,Lft8, commlift } from "../assets";
 
-const OurProducts = [
-  {
-    name: `Home Elevators`,
-    disc: `Custom-designed solutions perfect for residential spaces`,
-    prodimage: Lft5,
-  },
-  {
-    name: `Passenger Elevators`,
-    disc: `Efficient people movers for commercial buildings`,
-    prodimage: Lft6,
-  },
-  {
-    name: `Commercial Elevators`,
-    disc: `High-capacity solutions for business environments`,
-    prodimage: commlift,
-  },
-  {
-    name: `Structural Elevators`,
-    disc: `Robust systems for industrial applications`,
-    prodimage: Lft8,
-  },
-  {
-    name: `Capsule Elevators`,
-    disc: `Modern panoramic lifting solutions`,
-    prodimage: Lft5,
-  },
-  {
-    name: `Glass Elevators`,
-    disc: `Elegant, transparent vertical transportation`,
-    prodimage: Lft6,
-  },
-  {
-    name: `Car Elevators`,
-    disc: `Specialized solutions for automotive transportation`,
-    prodimage: Lft7,
-  },
-  {
-    name: `Hospital Elevators`,
-    disc: `Medical-grade elevation systems`,
-    prodimage: Lft8,
-  },
-  {
-    name: `Freight Elevators`,
-    disc: `Heavy-duty cargo transportation`,
-    prodimage: Lft5,
-  },
-  {
-    name: `Dumbwaiter Elevators`,
-    disc: `Compact service lifting solutions`,
-    prodimage: Lft6,
-  },
-  {
-    name: `Kitchen Elevators`,
-    disc: `Specialized food service transportation`,
-    prodimage: Lft7,
-  },
-  {
-    name: `MRL Elevators`,
-    disc: `Space-saving machine room-less systems`,
-    prodimage: Lft8,
-  },
-];
+import AllProducts from '../components/categorydata';
+import { useNavigate } from "react-router-dom";
+
 
 // Custom Previous Arrow
 const PrevArrow = ({ onClick }) => (
@@ -89,6 +30,8 @@ const NextArrow = ({ onClick }) => (
 );
 
 const Products = () => {
+  const navigate = useNavigate()
+
   const settings = {
     dots: false,
     arrows:true,
@@ -136,7 +79,7 @@ const Products = () => {
   return (
     <div className="mt-5 relative">
       <Slider {...settings}>
-        {OurProducts.map((prod, i) => (
+        {AllProducts.map((prod, i) => (
           <div key={i} className="p-1 z-10">
             <div className="relative group overflow-hidden bg-gray-100 shadow rounded-lg text-left">
               {/* Product Image */}
@@ -148,13 +91,13 @@ const Products = () => {
 
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent 0 transition-opacity duration-500 flex flex-col justify-end p-4 xl:p-8 text-white">
-                <h3 className="text-lg xl:text-2xl xl:pr-40 font-medium text-mainbtn">
+                <h3 className="text-lg xl:text-2xl xl:pr-40 font-medium text-mainbtn text-nowrap">
                   {prod.name}
                 </h3>
                 <p className="text-[10px] md:text-xs my-1 md:my-3 ">
                   {prod.disc}
                 </p>
-                <button className="w-fit border hover:border-mainbtn capitalize hover:bg-mainbtn px-3 py-1 text-[10px] md:text-sm ">
+                <button onClick={() => navigate(`/products/${prod.slug}`)} className="w-fit border hover:border-mainbtn capitalize hover:bg-mainbtn px-3 py-1 text-[10px] md:text-sm ">
                   Learn More
                 </button>
               </div>
