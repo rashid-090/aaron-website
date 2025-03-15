@@ -100,7 +100,7 @@ const products = [
     {
       name: "Freight Elevators",
       disc: "Heavy-duty cargo transportation",
-      prodimage: Lft8,
+      prodimage: Lft5,
       slug: "freight-elevators",
       modals: [
         { id: 1, title: "Freight Elevator - View 1", image: Lft8, url:`modal-1` },
@@ -112,7 +112,7 @@ const products = [
     {
       name: "Dumbwaiter Elevators",
       disc: "Compact service lifting solutions",
-      prodimage: Lft8,
+      prodimage: Lft6,
       slug: "dumbwaiter-elevators",
       modals: [
         { id: 1, title: "Dumbwaiter Elevator - View 1", image: Lft8, url:`modal-1` },
@@ -124,7 +124,7 @@ const products = [
     {
       name: "Kitchen Elevators",
       disc: "Specialized food service transportation",
-      prodimage: Lft8,
+      prodimage: Lft7,
       slug: "kitchen-elevators",
       modals: [
         { id: 1, title: "Kitchen Elevator - View 1", image: Lft8, url:`modal-1` },
