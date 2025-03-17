@@ -35,6 +35,20 @@ color: #fff;
 background: #009A92;
 } */
 
+
+.menus::-webkit-scrollbar {
+  width: .4rem;
+}
+ 
+.menus::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.menus::-webkit-scrollbar-thumb {
+  background-color: #efb13b;
+  /* outline: 1px solid slategrey; */
+}
+
 body {
 /* max-width: 1550px; */
   margin: 0 auto;

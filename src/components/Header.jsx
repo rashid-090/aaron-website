@@ -5,6 +5,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { IoIosClose } from "react-icons/io";
+import AllProducts from '../components/categorydata';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,11 +23,7 @@ const Header = () => {
     { name: "contact us", link: "/contact-us" },
   ];
 
-  const products = [
-    { name: "Elevators", link: "/products/commercial-elevators" },
-    { name: "Elevators", link: "/products/commercial-elevators" },
-    { name: "Elevators", link: "/products/commercial-elevators" },
-  ];
+  const products = AllProducts; // Use the imported products array
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,9 +42,7 @@ const Header = () => {
     setIsMobileSubmenuOpen(!isMobileSubmenuOpen);
   };
 
-
   const isActive = (path) => location.pathname === path; // Check if path is active
-
 
   return (
     <nav
@@ -65,69 +60,71 @@ const Header = () => {
             alt="Logo"
           />
         </Link>
-{/* Desktop Menu */}
-<div className="hidden lg:flex items-center gap-16">
-  <ul className="flex gap-10 text-sm tracking-wider font-light text-black">
-    {menus.map((menu, index) => (
-      <li
-        key={index}
-        className={`relative group hover:cursor-pointer py-4 hover:text-mainbtn ${
-          isActive(menu.link) ? "text-mainbtn" : ""
-        } duration-100 flex items-center`}
-        onClick={() => menu.name.toLowerCase() !== "products" && navigate(menu.link)} // Prevent click navigation for "Products"
-        onMouseEnter={() =>
-          menu.name.toLowerCase() === "products" &&
-          setIsDropdownVisible(true)
-        }
-        onMouseLeave={() =>
-          menu.name.toLowerCase() === "products" &&
-          setIsDropdownVisible(false)
-        }
-      >
-        <span className="flex items-center">
-          {menu.name
-            .toLowerCase()
-            .replace(/^./, (firstChar) => firstChar.toUpperCase())}
-          {menu.name.toLowerCase() === "products" && (
-            <span
-              className={`ml-1 text-xl text-gray-500 group-hover:text-mainbtn transition-transform duration-300 ${
-                isDropdownVisible ? "rotate-180" : ""
-              }`}
-            >
-              <MdKeyboardArrowDown />
-            </span>
-          )}
-        </span>
 
-        {/* Dropdown for Products */}
-        {menu.name.toLowerCase() === "products" && (
-          <ul
-            className={`absolute top-12 left-0 bg-white shadow-md rounded-md py-2 w-40 overflow-hidden transition-all duration-500 ease-in-out ${
-              isDropdownVisible
-                ? "max-h-40 opacity-100 visible"
-                : "max-h-0 opacity-0 invisible"
-            }`}
-          >
-            {products.map((product, i) => (
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center gap-16">
+          <ul className="flex gap-10 text-sm tracking-wider font-light text-black">
+            {menus.map((menu, index) => (
               <li
-                key={i}
-                className="px-4 py-2 text-sm hover:bg-gray-100 hover:text-mainbtn text-black cursor-pointer"
-                onClick={() => navigate(product.link)}
+                key={index}
+                className={`relative group hover:cursor-pointer py-4 hover:text-mainbtn ${
+                  isActive(menu.link) ? "text-mainbtn" : ""
+                } duration-100 flex items-center`}
+                onClick={() => menu.name.toLowerCase() !== "products" && navigate(menu.link)} // Prevent click navigation for "Products"
+                onMouseEnter={() =>
+                  menu.name.toLowerCase() === "products" &&
+                  setIsDropdownVisible(true)
+                }
+                onMouseLeave={() =>
+                  menu.name.toLowerCase() === "products" &&
+                  setIsDropdownVisible(false)
+                }
               >
-                {product.name}
+                <span className="flex items-center">
+                  {menu.name
+                    .toLowerCase()
+                    .replace(/^./, (firstChar) => firstChar.toUpperCase())}
+                  {menu.name.toLowerCase() === "products" && (
+                    <span
+                      className={`ml-1 text-xl text-gray-500 group-hover:text-mainbtn transition-transform duration-300 ${
+                        isDropdownVisible ? "rotate-180" : ""
+                      }`}
+                    >
+                      <MdKeyboardArrowDown />
+                    </span>
+                  )}
+                </span>
+
+                {/* Dropdown for Products */}
+                {menu.name.toLowerCase() === "products" && (
+                  <ul
+                    className={`absolute top-12 left-0 bg-white shadow-md menus rounded-md py-2 w-60 overflow-y-scroll transition-all duration-500 ease-in-out ${
+                      isDropdownVisible
+                        ? "max-h-80 opacity-100 visible"
+                        : "max-h-0 opacity-0 invisible"
+                    }`}
+                  >
+                    {products.map((product, i) => {
+                      // console.log(product)
+                      return(
+                        <li
+                        key={i}
+                        className="px-4 py-2 text-sm hover:bg-gray-100 hover:text-mainbtn text-black cursor-pointer"
+                        onClick={() => navigate(`/products/${product.slug}`)}
+                      >
+                        {product.name}
+                      </li>
+                      )
+})}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>
-        )}
-      </li>
-    ))}
-  </ul>
-  <button className="bg-mainbtn border-2 border-mainbtn text-white hover:text-white rounded-lg duration-150 px-3 text-sm py-2">
-    <Link to="/">CALL NOW</Link>
-  </button>
-</div>
-
-
+          <button className="bg-mainbtn border-2 border-mainbtn text-white hover:text-white rounded-lg duration-150 px-3 text-sm py-2">
+            <Link to="/">CALL NOW</Link>
+          </button>
+        </div>
 
         {/* Mobile Menu Toggle */}
         <div className="lg:hidden flex items-center">
@@ -140,69 +137,67 @@ const Header = () => {
         </div>
       </div>
 
-   {/* Mobile Menu */}
-{isMobileMenuOpen && (
-  <div className="lg:hidden bg-white shadow-md rounded-md py-4 px-3">
-    <ul className="flex flex-col gap-4 text-sm tracking-wider font-light text-black">
-      {menus.map((menu, index) => (
-        <li key={index} className="hover:text-mainbtn cursor-pointer">
-          {menu.name.toLowerCase() === "products" ? (
-            <div>
-              {/* Dropdown Toggle */}
-              <div
-                className="flex justify-between items-center"
-                onClick={(e) => {
-                  e.stopPropagation(); // Prevent interference with submenu clicks
-                  toggleMobileSubmenu();
-                }}
-              >
-                <span>{menu.name.toLowerCase().replace(/^./, (firstChar) => firstChar.toUpperCase())}</span>
-                <span>{isMobileSubmenuOpen ? "-" : "+"}</span>
-              </div>
-              {/* Submenu Items */}
-              <div
-                className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
-                  isMobileSubmenuOpen ? "max-h-40" : "max-h-0"
-                }`}
-              >
-                <ul className="ml-4 mt-2">
-                  {products.map((product, i) => (
-                    <li
-                      key={i}
-                      className="py-1 hover:text-mainbtn cursor-pointer"
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-white shadow-md rounded-md py-4 px-3">
+          <ul className="flex flex-col gap-4 text-sm tracking-wider font-light text-black">
+            {menus.map((menu, index) => (
+              <li key={index} className="cursor-pointer">
+                {menu.name.toLowerCase() === "products" ? (
+                  <div>
+                    {/* Dropdown Toggle */}
+                    <div
+                      className="flex justify-between items-center"
                       onClick={(e) => {
-                        e.stopPropagation(); // Ensure click only navigates
-                        navigate(product.link);
-                        console.log(product.link);
-                        setIsMobileMenuOpen(false);
-                        setIsMobileSubmenuOpen(false);
+                        e.stopPropagation(); // Prevent interference with submenu clicks
+                        toggleMobileSubmenu();
                       }}
                     >
-                      {product.name}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ) : (
-            // Non-dropdown menu items
-            <div
-              onClick={() => {
-                navigate(menu.link);
-                setIsMobileMenuOpen(false);
-              }}
-            >
-              {menu.name
-                .toLowerCase()
-                .replace(/^./, (firstChar) => firstChar.toUpperCase())}
-            </div>
-          )}
-        </li>
-      ))}
-    </ul>
-  </div>
-)}
-
+                      <span>{menu.name.toLowerCase().replace(/^./, (firstChar) => firstChar.toUpperCase())}</span>
+                      <span>{isMobileSubmenuOpen ? "-" : "+"}</span>
+                    </div>
+                    {/* Submenu Items */}
+                    <div
+                      className={`overflow-y-scroll transition-[max-height] duration-300 ease-in-out ${
+                        isMobileSubmenuOpen ? "max-h-60" : "max-h-0"
+                      }`}
+                    >
+                      <ul className="ml-4 mt-2">
+                        {products.map((product, i) => (
+                          <li
+                            key={i}
+                            className="py-3 w-full hover:bg-gray-100 hover:text-mainbtn cursor-pointer"
+                            onClick={(e) => {
+                              e.stopPropagation(); // Ensure click only navigates
+                              navigate(`/products/${product.slug}`);
+                              setIsMobileMenuOpen(false);
+                              setIsMobileSubmenuOpen(false);
+                            }}
+                          >
+                            {product.name}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ) : (
+                  // Non-dropdown menu items
+                  <div
+                    onClick={() => {
+                      navigate(menu.link);
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    {menu.name
+                      .toLowerCase()
+                      .replace(/^./, (firstChar) => firstChar.toUpperCase())}
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
