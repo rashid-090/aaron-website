@@ -16,6 +16,10 @@ import Catogory from "./pages/Products/Categories";
 import Modal from "./pages/Products/Items";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Login from "./admin/pages/Login";
+import { useDispatch, useSelector } from "react-redux";
+import Loading from "./pages/Loading";
+import { getUserDataFirst } from "./redux/actions/userActions";
 
 const Home = lazy(() => import("./pages/Home"));
 
@@ -80,13 +84,45 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
+
+      {
+        path: "/login",
+        element: (
+          <Suspense fallback={<LoadingScrn />}>
+            <Login />
+          </Suspense>
+        ),
+      },
+      
     ],
   },
 ]);
 
 function App() {
+
+  const { user, loading } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!user) {
+      dispatch(getUserDataFirst());
+    }
+  }, [dispatch, user]);
+
+  const ProtectedRoute = ({ element }) => {
+    const { user, loading } = useSelector((state) => state.user);
+
+    return user ? element : <Navigate to="/login" />;
+  };
+
+  if (loading) {
+    return <Loading />;
+  }
+
+
   return (
     <>
+
       <RouterProvider router={router} />
     </>
   );
