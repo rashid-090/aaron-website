@@ -119,15 +119,14 @@ const Footer = () => {
               Address
             </h4>
             <p className="text-sm ">
-              1234 Elm Street, Suite 567
-              <br /> Faketown , AB 98765
+            No:48/376, Second floor, Gold Souk Grande Mall,<br /> Ponnurunni, Vyttila, Kochi, Ernakulam, Kerala 682019
             </p>
             <div className="flex gap-3 items-center text-center md:text-right">
               <div className="text-lg">
                 <FaPhone />
               </div>
               <a href="#" className="hover:text-mainbtn text-center  md:text-right">
-                +1 800 123-4567
+              +91 7592056788
               </a>
             </div>
             <div className="flex gap-3 items-center">
@@ -135,7 +134,7 @@ const Footer = () => {
                 <IoIosMail />
               </div>
               <a href="#" className="hover:text-mainbtn">
-                contact@fakemail.com
+              info@aaronelevators.in
               </a>
             </div>
           </div>
