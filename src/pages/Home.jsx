@@ -55,7 +55,7 @@ const Home = () => {
           className="absolute top-0 left-0 w-full h-full object-cover"
           src={LiftBanner}
           autoPlay
-          loop
+          loop={true}
           muted
         />
         <div className="bg-black bg-opacity-40 absolute w-full h-full z-10"></div>
