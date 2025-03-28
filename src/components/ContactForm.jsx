@@ -10,21 +10,21 @@ const ContactForm = () => {
   return (
     <>
       <div className="relative mt-5 w-full xl:w-[80%] mx-auto">
-        <div className="bg-white shadow-2xl  border rounded-lg w-full p-7 md:p-10">
+        <div className="bg-white   border rounded-lg w-full p-7 md:p-10">
          
           <form className="flex flex-col gap-5 mt-5">
             <input
-              className="focus:border-mainbtn py-2 border-b w-full"
+              className="focus:border-mainbtn placeholder:text-black py-2 border-b  border-black  w-full"
               type="text"
               placeholder="Full Name"
             />
             <input
-              className="focus:border-mainbtn py-2 border-b  w-full"
+              className="focus:border-mainbtn placeholder:text-black py-2 border-b  border-black  w-full"
               type="email"
               placeholder="Email Address"
             />
             <textarea
-              className="focus:border-mainbtn py-2  border-b w-full"
+              className="focus:border-mainbtn placeholder:text-black py-2  border-black border-b w-full"
               rows="5"
               placeholder="Message"
             ></textarea>

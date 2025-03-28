@@ -67,8 +67,8 @@ const Login = () => {
         setIsButtonLoading(false)
     }
     return (
-        <section className="w-11/12 xl:w-10/12 mx-auto h-screen flex flex-col justify-center items-center py-10">
-            <div className="bg-white text-black text-center w-[95%] xl:w-[380px] shadow-2xl rounded-2xl pb-5">
+        <section className="w-11/12 xl:w-10/12  mx-auto h-screen flex flex-col justify-center items-center py-10">
+            <div className="bg-white text-black text-center w-[95%] md:w-[380px] shadow-2xl rounded-2xl pb-5">
                 <div className=" p-3 grid place-items-center rounded-2xl -mt-5 w-[90%] mx-auto shadow-xl">
                     <Link to="/">
                         <img className="h-14 object-cover" src={AaronLogo} alt="Logo" />

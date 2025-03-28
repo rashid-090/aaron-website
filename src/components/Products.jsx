@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { Lft5,Lft6,Lft7,Lft8, commlift } from "../assets";
+import { Lft5, Lft6, Lft7, Lft8, commlift } from "../assets";
 
-import AllProducts from '../components/categorydata';
+import AllProducts from '../components/modalsdata';
 import { useNavigate } from "react-router-dom";
 
 
@@ -31,11 +31,13 @@ const NextArrow = ({ onClick }) => (
 
 const Products = () => {
   const navigate = useNavigate()
+  const [descriptionLength, setDescriptionLength] = useState(200);
+
 
   const settings = {
     dots: false,
-    arrows:true,
-    infinite: true,
+    arrows: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -63,48 +65,71 @@ const Products = () => {
       {
         breakpoint: 1024, // For tablets and smaller devices
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
         },
       },
       {
         breakpoint: 640, // For mobile devices
         settings: {
           slidesToShow: 2,
-          arrows:true,
+          arrows: true,
         },
       },
     ],
   };
 
-  return (
-    <div className="mt-5 relative">
-      <Slider {...settings}>
-        {AllProducts.map((prod, i) => (
-          <div key={i} className="p-1 z-10">
-            <div className="relative group overflow-hidden bg-gray-100 shadow rounded-lg text-left">
-              {/* Product Image */}
-              <img
-                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-                src={prod.prodimage}
-                alt={prod.name}
-              />
+  useEffect(() => {
+    const updateDescriptionLength = () => {
+      setDescriptionLength(window.innerWidth < 768 ? 30 : 70);
+    };
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent 0 transition-opacity duration-500 flex flex-col justify-end p-4 xl:p-8 text-white">
-                <h3 className="text-lg xl:text-2xl xl:pr-40 font-medium text-mainbtn text-nowrap">
-                  {prod.name}
-                </h3>
-                <p className="text-[10px] md:text-xs my-1 md:my-3 ">
-                  {prod.disc}
-                </p>
-                <button onClick={() => navigate(`/products/${prod.slug}`)} className="w-fit border hover:border-mainbtn capitalize hover:bg-mainbtn px-3 py-1 text-[10px] md:text-sm ">
-                  Learn More
-                </button>
-              </div>
+    updateDescriptionLength(); // Set initial value
+
+    window.addEventListener("resize", updateDescriptionLength);
+    return () => window.removeEventListener("resize", updateDescriptionLength);
+  }, []);
+
+  return (
+    <div className="mt-5 grid grid-cols-5 relative">
+      {/* <Slider {...settings}>
+        
+      </Slider> */}
+      {AllProducts.map((prod, i) => (
+        <div key={i} className="p-5 z-10 ">
+          <div className="relative group overflow-hidden  bg-gray-100 shadow rounded-lg text-left ">
+            {/* Product Image */}
+            <img
+              className="object-cover w-full h-[20rem] md:h-[30rem]  transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0 "
+              src={prod.galleryImages[0].src}
+              alt={prod.galleryImages[0].alt}
+            />
+            <div className="opacity-0 group-hover:opacity-100 absolute w-full h-full top-0 left-0 inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent">
+
+            </div>
+            <div   className="absolute  group-hover:opacity-0 inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent 0 transition-opacity duration-500 flex flex-col justify-end p-4 xl:p-8 text-white backdrop-blur-[2px] hover:backdrop-blur-0">
+              
+              <h3 className="text-lg lg:text-2xl 2xl:text-4xl text-left font-extrabold absolute z-[99999] bottom-5 left-5  uppercase  text-mainbtn  ">
+                {prod.pageHeader.title}
+              </h3>
+            </div>
+
+            {/* Overlay */}
+            <div className="absolute opacity-100 transition-all translate-y-[200px] group-hover:translate-y-[00px]  group-hover:opacity-100 inset-0  duration-300 flex flex-col justify-end p-4 xl:p-8 text-white ">
+              <h3 className="text-lg xl:text-2xl xl:pr-40 font-medium text-mainbtn   uppercase">
+                {prod.pageHeader.title}
+              </h3>
+              <p className="text-[10px] md:text-xs my-1 md:my-3 ">
+                {prod.pageHeader.description.length > descriptionLength
+                  ? `${prod.pageHeader.description.slice(0, descriptionLength)}...`
+                  : prod.pageHeader.description}
+              </p>
+              <button onClick={() => navigate(`/products/${prod.id}/${prod.id}`)} className="w-fit border hover:border-mainbtn capitalize hover:bg-mainbtn px-3 py-1 text-[10px] md:text-sm ">
+                Learn More
+              </button>
             </div>
           </div>
-        ))}
-      </Slider>
+        </div>
+      ))}
     </div>
   );
 };
