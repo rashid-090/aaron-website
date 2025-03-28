@@ -94,10 +94,10 @@ const Footer = () => {
         </div>
       </div>
       <footer className="md:rounded-b-lg bg-black mt-32">
-        <div className="w-full py-10 grid grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-10 gap-x-40">
+        <div className="w-full py-10 grid grid-cols-1  md:grid-cols-3 xl:grid-cols-3 gap-5 md:gap-10 gap-x-40">
           <div className="flex flex-col items-center justify-center text-center gap-3  ">
             <img
-              className="h-10 w-28 md:h-16 md:w-32 object-contain"
+              className="h-16 w-28 md:h-16 md:w-32 object-contain"
               src={AaronLogoWhite}
               alt=""
             />
@@ -114,7 +114,7 @@ const Footer = () => {
               <Link to="/contact-us">Contact</Link>
             </div>
           </div>
-          <div className="flex flex-col items-end pr-20 gap-1 text-white  text-right">
+          <div className="flex flex-col items-center md:items-end md:pr-20 gap-1 text-white text-center  md:text-right">
             <h4 className="font-semibold text-xl tracking-widest capitalize mb-3 ">
               Address
             </h4>
@@ -122,11 +122,11 @@ const Footer = () => {
               1234 Elm Street, Suite 567
               <br /> Faketown , AB 98765
             </p>
-            <div className="flex gap-3 items-center text-right">
+            <div className="flex gap-3 items-center text-center md:text-right">
               <div className="text-lg">
                 <FaPhone />
               </div>
-              <a href="#" className="hover:text-mainbtn text-right">
+              <a href="#" className="hover:text-mainbtn text-center  md:text-right">
                 +1 800 123-4567
               </a>
             </div>

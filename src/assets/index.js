@@ -15,7 +15,6 @@ import HomeElevatorImage4 from './images/lift/home-elevator4.jpeg'
 import HomeElevatorImage5 from './images/lift/home-elevator5.jpeg'
 
 // Commercial Elevators
-import CommercialElecatorImage from './images/lift/COmmercial-Elevator.jpg'
 import CommercialElecatorImage2 from './images/lift/commer-elevators.webp'
 import CommercialElecatorImage3 from './images/lift/commer-elevators2.webp'
 
@@ -104,7 +103,7 @@ export {
     ClintLogo,
     Servhome, Servpassanger, Servcommercial, Servstructure, Servcapsule, Servglass, Servcar, Servhospital, Servfreight, Servbubm, Servkitchen, ServMRL,
     HomeElevatorImage, HomeElevatorImage2, HomeElevatorImage3, HomeElevatorImage4, HomeElevatorImage5,
-    CommercialElecatorImage, CommercialElecatorImage2, CommercialElecatorImage3,
+     CommercialElecatorImage2, CommercialElecatorImage3,
     PassengerElevatorImage,
     GlassElevator2, GlassElevator1, GlassElevator3, GlassElevator4,
     StructuralElevator1,

@@ -1,5 +1,5 @@
 import {
-  CapsuleElevator1, CarElevator1, CarElevator2, CarElevator3, CarElevator4, CommercialElecatorImage,
+  CapsuleElevator1, CarElevator1, CarElevator2, CarElevator3, CarElevator4,
   CommercialElecatorImage2, CommercialElecatorImage3,
   DumbWaiterElevator1,
   DumbWaiterElevator2,
@@ -454,12 +454,7 @@ export const commercialElevatorData = [
 
     // Gallery images (placeholders, you would replace these with actual image paths)
     galleryImages: [
-      {
-        id: 2,
-        src: CommercialElecatorImage,
-        alt: "Elevator Control Panel",
-        title: "Smart Control System",
-      },
+     
       {
         id: 3,
         src: CommercialElecatorImage2,
