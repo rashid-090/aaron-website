@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
-const GalleryComponent = ({images}) => {
-  const [mainImage, setMainImage] = useState(images[0]);
+const GalleryComponent = ({ images }) => {
+  const [mainImage, setMainImage] = useState();
 
-console.log(images);
+  console.log(images);
+  useEffect(() => {
+    setMainImage(images[0])
+  }, [images])
+
 
   return (
     <div className="flex flex-col items-center w-full  mx-auto p-4">
       {/* Main Image */}
       <img
-        src={mainImage.src}
+        src={mainImage?.src}
         alt="Main"
         loading="lazy"
         className="w-full aspect-video object-cover h-auto rounded-lg shadow-lg mb-4"
@@ -18,7 +22,7 @@ console.log(images);
 
       {/* Thumbnails */}
       <div className="flex w-full  justify-center space-x-4  py-2 ">
-        {images.map((img, index) => (
+        {images?.map((img, index) => (
           <img
             key={index}
             src={img.src}

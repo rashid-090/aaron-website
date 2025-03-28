@@ -6,6 +6,9 @@ import { Ban1 } from "../../assets";
 import { motion, AnimatePresence } from "framer-motion";
 import { commercialElevatorData } from "../../components/modalsdata"; // Import the data
 import { useParams } from "react-router-dom";
+import { ImCheckmark } from "react-icons/im";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+
 
 const CommercialElevators = () => {
   const { id } = useParams();
@@ -31,11 +34,11 @@ const CommercialElevators = () => {
         
         if (filteredData) {
           // Set state variables if data is found
+          setData(filteredData)
           setTabs(filteredData.tabs);
           setContent(filteredData.tabContent);
           setPageHeader(filteredData.pageHeader);
-          setData(filteredData)
-          console.log("Data loaded:", filteredData);
+          console.log("Gallery Images:", filteredData.galleryImages); // Add this line
         } else {
           console.error("No matching data found for id:", id);
         }
@@ -52,6 +55,13 @@ const CommercialElevators = () => {
   if (loading) {
     return <h1>loading</h1>;
   }
+
+
+
+  const DynamicSVG = ({ iconName }) => {
+    return <div dangerouslySetInnerHTML={{ __html: svgIcons[iconName] }} />;
+  };
+
   // Dynamic tab content rendering
   const renderTabContent = [
     // Description Tab
@@ -108,17 +118,19 @@ const CommercialElevators = () => {
             key={index}
             className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition flex md:flex-col text-start md:text-center"
           >
-            <div className="text-mainbtn mb-4 flex h-full items-center">
-              <svg
+            <div className="text-mainbtn mb-4 flex h-full items-center justify-center">
+            <IoMdCheckmarkCircleOutline  size={30}/> 
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-12 w-12 mx-auto"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 dangerouslySetInnerHTML={{
-                  __html: data.icons[feature.icon],
+                  __html: feature.icon,
                 }}
-              />
+              /> */}
+                {/* <DynamicSVG iconName={} /> */}
             </div>
             <div className="flex flex-col">
               <h4 className="text-xl font-semibold text-black mb-3">
@@ -186,14 +198,14 @@ const CommercialElevators = () => {
     <>
       <div className="pt-28 px-2 md:px-0 md:w-9/12 mx-auto w-full">
         <div className="text-center my-10 space-y-3">
-          <h1 className="text-3xl sm:text-4xl xl:text-6xl font-normal">
+          <h1 className="text-3xl sm:text-4xl xl:text-6xl font-normal uppercase">
             {pageHeader.title}
           </h1>
           <p className="xl:w-[80%] mx-auto text-sm text-center font-extralight tracking-wide md:tracking-wide md:w-full">
             {pageHeader.description}
           </p>
         </div>
-        <Gallery images={data.galleryImages} />
+        <Gallery images={data.galleryImages || []} />
         <div className="flex justify-center gap-4 mt-8">
           {tabs.map((tab, index) => (
             <button
@@ -225,36 +237,9 @@ const CommercialElevators = () => {
               {renderTabContent[activeTab]}
             </motion.div>
           </AnimatePresence>
-        </div>
-
-        {/* Uncomment if you want to include the contact form section */}
-        {/* <section className="mt-10">
-          <div className="relative p-5 py-20 h-full flex justify-center items-center rounded-lg overflow-hidden">
-            <img
-              className="absolute object-cover top-0 left-0 w-full h-full"
-              src={Ban1}
-              alt=""
-            />
-            <div className="absolute bg-[#0000007c] w-full h-full top-0 left-0 px-10"></div>
-            <div className="z-20 relative text-white text-center flex flex-col gap-2">
-              <h4 className="font-normal text-4xl xl:text-6xl">
-                {commercialElevatorData.contactSection.title}
-              </h4>
-              <p className="xl:w-[80%] mx-auto text-sm text-center font-extralight tracking-wide md:tracking-wide md:w-full">
-                {commercialElevatorData.contactSection.description}
-              </p>
-
-              <div className="xl:px-52">
-                <ContactForm />
-              </div>
-            </div>
-          </div>
-        </section> */}
+        </div>        
       </div>
-      {/* Uncomment if you want to include the FAQ section */}
-      {/* <div className="my-20 w-10/12 mx-auto">
-        <Faq faqData={faqData} />
-      </div> */}
+    
     </>
   );
 };

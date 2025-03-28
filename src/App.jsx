@@ -1,105 +1,42 @@
 import "./App.css";
-import { ScrollToTop } from "react-router-scroll-to-top";
 import { lazy, Suspense, useState, useEffect } from "react";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet,
-  useLocation,
+
+  Routes,
+  Route,
+  Navigate,
+  BrowserRouter,
 } from "react-router-dom";
 
-import { Header, Footer, LoadingScrn } from "./components/index";
-import PassengerElevators from "./pages/Products/PassengerElevators";
-import Catogory from "./pages/Products/Categories";
-import Modal from "./pages/Products/Items";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+import { LoadingScrn } from "./components/index";
 import Login from "./admin/pages/Login";
 import { useDispatch, useSelector } from "react-redux";
-import Loading from "./pages/Loading";
 import { getUserDataFirst } from "./redux/actions/userActions";
+import { Toaster } from "react-hot-toast";
+import UserLayout from "./layouts/UserLayout";
+import AdminLayout from "./layouts/AdminLayout";
 
+// User routes
+const Contact = lazy(() => import("./pages/Contact"));
+const About = lazy(() => import("./pages/About"));
+const Modal = lazy(() => import("./pages/Products/Items"));
+const Catogory = lazy(() => import("./pages/Products/Categories"));
 const Home = lazy(() => import("./pages/Home"));
 
-const Layout = () => {
-  return (
-    <div className="app  w-[98%] my-3  overflow-hidden 2xl:max-w-[2500px] mx-auto min-h-screen flex flex-col justify-between">
-      <Header />
-      <ScrollToTop />
-      <Outlet />
-      <Footer />
-    </div>
-  );
-};
+// Admin routes
+const AddCategory = lazy(() => import("./admin/pages/AddCategory"))
+const AddModel = lazy(() => import("./admin/pages/AddModel"));
+const Categories = lazy(() => import("./admin/pages/Categories"));
+const EditCategory = lazy(() => import("./admin/pages/EditCategory"));
+const Models = lazy(() => import("./admin/pages/ModelListTable"));
+const EditModel = lazy(() => import("./admin/pages/EditModel"))
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "*",
-        element: <Suspense fallback={<LoadingScrn />}>not found</Suspense>,
-      },
-      {
-        path: "/",
-        element: (
-          <Suspense fallback={<LoadingScrn />}>
-            <Home />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/about-us",
-        element: (
-          <Suspense fallback={<LoadingScrn />}>
-            <About />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/products/:category",
-        element: (
-          <Suspense fallback={<LoadingScrn />}>
-            <Catogory />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/products/:category/:id",
-        element: (
-          <Suspense fallback={<LoadingScrn />}>
-            <Modal />
-          </Suspense>
-        ),
-      },
-    
-      {
-        path: "/contact-us",
-        element: (
-          <Suspense fallback={<LoadingScrn />}>
-            <Contact />
-          </Suspense>
-        ),
-      },
 
-      {
-        path: "/login",
-        element: (
-          <Suspense fallback={<LoadingScrn />}>
-            <Login />
-          </Suspense>
-        ),
-      },
-      
-    ],
-  },
-]);
+
+
 
 function App() {
-
   const { user, loading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -116,16 +53,84 @@ function App() {
   };
 
   if (loading) {
-    return <Loading />;
+    return <LoadingScrn />;
   }
-
 
   return (
     <>
+      <Toaster position="top-center" />
 
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        {/* {user ? user.role === "user" && <UserLayout /> : <UserLayout />} */}
+        <Suspense fallback={<LoadingScrn />}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                user ? user.role === "user" && <UserLayout /> : <UserLayout />
+              }
+            >
+              <Route
+                index
+                element={
+                  user ? (
+                    user.role === "admin" ? (
+                      <Navigate to="/admin/" />
+                    ) : (
+                      <Home />
+                    )
+                  ) : (
+                    <Home />
+                  )
+                }
+              />
+
+
+              {/* General Pages */}
+              <Route path="/about-us" element={<About />} />
+              <Route path="/products/:category" element={<Catogory />} />
+              <Route path="/products/:category/:id" element={<Modal />} />
+              <Route path="/contact-us" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
+
+
+
+              {/* Admin Routes */}
+              {(user && user.role === "admin") ||
+                (user && user.role === "superAdmin") ? (
+                <Route path="/admin/*" element={<AdminRoutes />} />
+              ) : (
+                <Route path="/admin" element={<Navigate to="/" />} />
+              )}
+
+              <Route path="*" element={<div>not found</div>} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
     </>
   );
 }
 
 export default App;
+
+function AdminRoutes() {
+  return (
+    <Suspense fallback={<LoadingScrn />}>
+      <Routes>
+        <Route path="/" element={<AdminLayout />}>
+          <Route index element={<div >Dashbord</div>} />
+          <Route path="/products/:category/:id" element={<Modal />} />
+
+          <Route path="/add-category" element={<AddCategory />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/edit-category" element={<EditCategory />} />
+          <Route path="/add-model" element={<AddModel />} />
+          <Route path="/models" element={<Models />} />
+          <Route path="/models/:id/edit" element={<EditModel />} />
+          <Route path="*" element={<div>not found</div>} />
+        </Route>
+      </Routes>
+    </Suspense>
+  );
+}

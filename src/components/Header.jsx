@@ -5,7 +5,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { IoIosClose } from "react-icons/io";
-import AllProducts from '../components/categorydata';
+import AllProducts from '../components/modalsdata';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,8 +48,8 @@ const Header = () => {
     <nav
       className={`fixed w-[96%] mx-auto left-[50%] -translate-x-[50%] z-[999] transition-all duration-300 xl:py-1 rounded-lg ${
         isScrolled
-          ? "bg-white backdrop-blur-md top-3"
-          : "bg-white backdrop-blur-md top-6"
+          ? "bg-white backdrop-blur-md top-3 shadow-lg"
+          : "bg-[#ffffff] backdrop-blur-md top-6"
       }`}
     >
       <div className="px-3 py-2 flex items-center justify-between">
@@ -105,14 +105,13 @@ const Header = () => {
                     }`}
                   >
                     {products.map((product, i) => {
-                      // console.log(product)
                       return(
                         <li
                         key={i}
-                        className="px-4 py-2 text-sm hover:bg-gray-100 hover:text-mainbtn text-black cursor-pointer"
-                        onClick={() => navigate(`/products/${product.slug}`)}
+                        className="px-4 py-2 text-sm hover:bg-gray-100 hover:text-mainbtn text-black cursor-pointer capitalize"
+                        onClick={() => navigate(`/products/${product.id}/${product.id}`)}
                       >
-                        {product.name}
+                        {product.pageHeader.title}
                       </li>
                       )
 })}
@@ -122,7 +121,7 @@ const Header = () => {
             ))}
           </ul>
           <button className="bg-mainbtn border-2 border-mainbtn text-white hover:text-white rounded-lg duration-150 px-3 text-sm py-2">
-            <Link to="/">CALL NOW</Link>
+            <a target="_blank" href="https://wa.me/+919995689519">CHAT NOW</a>
           </button>
         </div>
 

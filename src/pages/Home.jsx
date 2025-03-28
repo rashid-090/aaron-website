@@ -1,5 +1,5 @@
 import React from "react";
-import { Liftvid, LiftvidPost, Lft3, Lft2, Ban1, Lft5 } from "../assets";
+import { Liftvid, LiftvidPost, Lft3, Lft2, Ban1, Lft5, LiftBanner, AbousUsImage } from "../assets";
 import {
   EnquiryForm,
   Products,
@@ -11,6 +11,7 @@ import {
   ContactForm,
 } from "../components";
 import { RiDoubleQuotesL } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const faqData = [
@@ -44,26 +45,38 @@ const Home = () => {
     <>
       <section className="relative w-full mx-auto  rounded-lg h-full md:h-[60vh] xl:h-screen overflow-hidden">
         {/* Background Video */}
-        <img
+        {/* <img
           className="absolute top-0 left-0 w-full h-full object-cover"
           src={Ban1}
           alt=""
+        /> */}
+
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          src={LiftBanner}
+          autoPlay
+          loop
+          muted
         />
         <div className="bg-black bg-opacity-40 absolute w-full h-full z-10"></div>
         {/* Content Overlay */}
         <div className="w-11/12 xl:w-8/12 mx-auto pt-32 py-20 md:pt-20 h-full grid grid-cols-1 tece gap-5 xl:gap-10 z-20 relative text-white">
-          <div className="h-full flex flex-col justify-center items-center gap-3 text-center">
-            <h1 className="text-3xl sm:text-4xl xl:text-5xl 2xl:text-6xl font-normal  ">
-              Premium Elevators in Kerala.
-              <br /> Aaron Elevators
+          <div className="h-full flex flex-col justify-center items-center gap-3 text-center mt-5">
+            <h1 className="text-3xl sm:text-4xl xl:text-5xl 2xl:text-7xl font-normal uppercase  ">
+              Aaron Elevators
             </h1>
-            <p className="xl:w-[60%] mx-auto text-sm text-center font-extralight tracking-tighter md:tracking-tight md:w-full">
+            <h2 className="text-3xl sm:text-4xl xl:text-5xl 2xl:text-4xl font-extralight lavishly-yours-regular">
+              Premium Elevators in Kerala.
+            </h2>
+            {/* <p className="xl:w-[60%] mx-auto text-sm text-center font-extralight tracking-tighter md:tracking-tight md:w-full">
               Transform your vertical mobility experience with Aaron Elevators,
               Our Elevators in Kerala combines innovation, safety, and
               reliability, making us the best elevator company in Kerala.
-            </p>
-            <button className="border-2 border-mainbtn w-fit rounded-lg px-3 h-10 text-mainbtn hover:bg-mainbtn hover:text-white duration-150 uppercase">
-              Contact us
+            </p> */}
+            <button className="border-2 border-mainbtn w-fit rounded-lg px-3 mt-16 h-10 text-mainbtn hover:bg-mainbtn hover:text-white duration-150 uppercase">
+              <Link to='/contact-us'>
+                Contact us
+              </Link>
             </button>
           </div>
           {/* <div className="h-full flex flex-col justify-center items-center">
@@ -80,8 +93,8 @@ const Home = () => {
         <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           <div className=" relative overflow-hidden">
             <img
-              className="w-full h-full aspect-square object-cover object-bottom z-0 rounded-lg"
-              src={Lft5}
+              className="w-full h-full aspect-square object-cover a z-0 rounded-lg object-right"
+              src={AbousUsImage}
               alt=""
             />
           </div>
@@ -193,7 +206,7 @@ const Home = () => {
                 certified technicians, maintaining the highest safety standards.
               </p>
             </div>
-            <div className="border bg-white h-full xl:h-60 flex flex-col justify-center p-2 md:p-5 rounded-lg ">
+            <div id="products" className="border bg-white h-full xl:h-60 flex flex-col justify-center p-2 md:p-5 rounded-lg ">
               <RiDoubleQuotesL className="text-5xl text-mainbtn" />
               <h4 className="text-xs md:text-base xl:text-lg font-medium pb-2">
                 24/7 Services
@@ -255,21 +268,26 @@ const Home = () => {
       </section> */}
       <section className="mt-20">
         <div className="relative p-5 py-20 h-full flex justify-center items-center rounded-lg overflow-hidden">
-          <img
+          {/* <img
             className="absolute object-cover top-0 left-0 w-full h-full"
             src={Ban1}
             alt=""
-          />
-          <div className="absolute bg-[#0000007c] w-full h-full top-0 left-0 p-10"></div>
-          <div className="z-20 relative text-white text-center flex flex-col gap-2">
-            <h4 className="font-normal text-4xl xl:text-6xl">
-              Get a Free Consultation
-            </h4>
-            <p className="text-xs md:text-sm ">
-              Take the first step towards superior vertical mobility. Contact
-              Kerala's trusted elevation experts for a consultation.
-            </p>
-            <ContactForm />
+          /> */}
+          <div className="absolute bg-[#fff] w-full h-full top-0 left-0 p-10 "></div>
+          <div className="z-20 relative text-white text-center grid grid-cols-1 md:grid-cols-2 gap-2 w-full md:w-[70%] rounded-2xl border-[5px] shadow-2xl border-gray-200 p-5">
+            <div className="flex flex-col justify-center items-start text-center  gap-2 md:text-left md:pl-10">
+              <h4 className="font-normal text-4xl   xl:text-6xl text-mainbtn">
+                Get a Free  Consultation
+              </h4>
+              <p className="text-xs md:text-sm text-black ">
+                Take the first step towards superior vertical mobility.   Contact
+                Kerala's trusted elevation experts for a consultation.
+              </p>
+            </div>
+            <div>
+              <ContactForm />
+
+            </div>
           </div>
         </div>
       </section>

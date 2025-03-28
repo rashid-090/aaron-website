@@ -3,7 +3,7 @@ import { Lft5, Lft6, Lft7, Lft8, commlift } from "../assets";
 const products = [
     {
       name: "Home Elevators",
-      disc: "Custom-designed solutions perfect for residential spaces",
+      disc: "Elevating Kerala Homes: The Essential Features of Aaron Home Elevators.",
       prodimage: Lft5,
       slug: "home-elevators",
       modals: [
