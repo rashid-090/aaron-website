@@ -211,12 +211,13 @@ const CommercialElevators = () => {
             <button
               key={index}
               onClick={() => handleTabChange(index)}
-              className={`px-4 text-nowrap py-2 border text-sm lg:text-base hover:border-mainbtnhrv border-gray-300 rounded-full transition ${
-                data.activeTab === index
-                  ? "bg-mainbtn text-white"
-                  : "hover:bg-mainbtnhrv hover:text-black"
+              className={`px-4 text-nowrap py-2 border text-sm lg:text-base  hover:border-mainbtnhrv border-gray-300 rounded-full transition ${
+                activeTab === index
+                  ? "bg-white text-black"
+                  : "bg-mainbtn text-white hover:bg-mainbtnhrv hover:text-black"
               }`}
             >
+             
               {tab}
             </button>
           ))}

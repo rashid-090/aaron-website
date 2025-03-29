@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AaronLogo, AaronLogoWhite } from "../assets";
 import { FaArrowUp, FaPhone } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaWhatsappSquare } from "react-icons/fa";
@@ -12,19 +12,19 @@ import { Link, useNavigate } from "react-router-dom";
 const SocialLinks = [
   {
     icon: <FaFacebook />,
-    link: `#`,
+    link: `https://www.facebook.com/aaronelevatorsindia/`,
   },
   {
     icon: <FaInstagram />,
-    link: `#`,
-  },
-  {
-    icon: <FaLinkedin />,
-    link: `#`,
+    link: `https://www.instagram.com/aaron_elevators/`,
   },
   {
     icon: <FaWhatsappSquare />,
-    link: `#`,
+    link: `https://wa.me/+919995689519`,
+  },
+  {
+    icon: <FaYoutube />,
+    link: `https://www.youtube.com/@aaronelevatorskerala`,
   },
 ];
 
@@ -107,34 +107,40 @@ const Footer = () => {
             <h4 className="font-semibold text-xl xl:text-xl tracking-widest capitalize mb-3 text-white ">
               Quick links
             </h4>
-            <div className="text-sm tracking-wider flex flex-col gap-1 text-white">
-              <Link to="/">Home</Link>
-              <Link to="/about-us">About Us</Link>
-              <button onClick={handleNavigateToProducts}>Products</button> {/* Button instead of Link */}
-              <Link to="/contact-us">Contact</Link>
+            <div className="text-sm tracking-wider flex flex-col gap-1  text-white">
+              <Link className="hover:text-mainbtn" to="/">Home</Link>
+              <Link className="hover:text-mainbtn" to="/about-us">About Us</Link>
+              <button  className="hover:text-mainbtn" onClick={handleNavigateToProducts}>Products</button> {/* Button instead of Link */}
+              <Link className="hover:text-mainbtn" to="/contact-us">Contact</Link>
             </div>
           </div>
-          <div className="flex flex-col items-center md:items-end md:pr-20 gap-1 text-white text-center  md:text-right">
-            <h4 className="font-semibold text-xl tracking-widest capitalize mb-3 ">
+          <div className="flex flex-col items-center md:items-end md:pr-20 gap-1 text-white text-center md:text-right">
+            <h4 className="font-semibold text-xl tracking-widest capitalize mb-3">
               Address
             </h4>
-            <p className="text-sm ">
-            No:48/376, Second floor, Gold Souk Grande Mall,<br /> Ponnurunni, Vyttila, Kochi, Ernakulam, Kerala 682019
-            </p>
-            <div className="flex gap-3 items-center text-center md:text-right">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://maps.app.goo.gl/oRXLe5XYxuJBTcFa8"
+              className="text-sm hover:text-mainbtn "
+            >
+              No:48/376, Second floor, Gold Souk Grande Mall,<br />
+              Ponnurunni, Vyttila, Kochi, Ernakulam, Kerala 682019
+            </a>
+            <div className="flex gap-3 items-center">
               <div className="text-lg">
                 <FaPhone />
               </div>
-              <a href="#" className="hover:text-mainbtn text-center  md:text-right">
-              +91 7592056788
+              <a href="tel:+917592056788" className="hover:text-mainbtn">
+                +91 7592056788
               </a>
             </div>
             <div className="flex gap-3 items-center">
               <div className="text-xl">
                 <IoIosMail />
               </div>
-              <a href="#" className="hover:text-mainbtn">
-              info@aaronelevators.in
+              <a href="mailto:info@aaronelevators.in" className="hover:text-mainbtn">
+                info@aaronelevators.in
               </a>
             </div>
           </div>
@@ -150,9 +156,9 @@ const Footer = () => {
               Powered DO Studio
             </a>
           </div>
-          <div className="flex gap-5 text-xl">
+          <div className="flex gap-5 text-xl ">
             {SocialLinks?.map((dt, i) => (
-              <a href={dt.link} className="hover:text-white hover:-translate-y-1 duration-200" key={i}>
+              <a href={dt.link} target="_blank" className=" hover:-translate-y-1 duration-200 hover:text-mainbtn" key={i}>
                 {dt.icon}
               </a>
             ))}

@@ -11,7 +11,7 @@ const GalleryComponent = ({ images }) => {
 
 
   return (
-    <div className="flex flex-col items-center w-full  mx-auto p-4">
+    <div className="flex flex-col items-center w-full md:w-8/12  mx-auto p-4">
       {/* Main Image */}
       <img
         src={mainImage?.src}
